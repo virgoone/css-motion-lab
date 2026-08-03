@@ -79,7 +79,7 @@
   height: 100%;
   margin: 0;
   opacity: 0;
-  cursor: pointer;
+  pointer-events: none;
 }
 
 .theme-switcher__control {
