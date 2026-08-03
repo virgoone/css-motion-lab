@@ -31,6 +31,17 @@ export const effects = [
     href: "./effects/document-folder/",
     themes: ["Archive Green"],
     status: "Ready"
+  },
+  {
+    id: "004",
+    slug: "theme-switcher",
+    title: "Glass Theme Switcher",
+    shortTitle: "Theme Switcher",
+    category: "Theme control",
+    description: "A light and dark switch driven by one moving glass lens and a warm light pool.",
+    href: "./effects/theme-switcher/",
+    themes: ["Light", "Dark"],
+    status: "Ready"
   }
 ];
 

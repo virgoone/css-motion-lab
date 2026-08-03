@@ -7,6 +7,7 @@ A small, dependency-free collection of tactile CSS motion studies. Each effect i
 - **Folder Pocket** — layered documents and a restrained 3D pocket opening, with amber, graphite, and pearl themes.
 - **Value Card Fan** — overlapping equal-width cards that part around the hovered or keyboard-focused value.
 - **Document Folder** — a three-stage archive that opens, lifts a two-piece postage collection, and fans the rear document.
+- **Glass Theme Switcher** — a native light and dark switch with a moving glass lens, warm light pool, and synchronized indicator.
 
 ## Development
 
@@ -64,14 +65,19 @@ Node.js is pinned to `22.16.0` through `.node-version`. The project uses relativ
     │   ├── page.css
     │   ├── value-cards.css
     │   └── app.js
-    └── document-folder/
+    ├── document-folder/
+    │   ├── index.html
+    │   ├── page.css
+    │   ├── document-folder.css
+    │   └── app.js
+    └── theme-switcher/
         ├── index.html
         ├── page.css
-        ├── document-folder.css
+        ├── theme-switcher.css
         └── app.js
 ```
 
-Each component stylesheet lives beside its effect page. Shared documentation behavior lives in `effects/shared/`: Preview / Code / Docs tabs, clipboard access, pixel rulers, and live element measurements. All three interactions remain pure CSS.
+Each component stylesheet lives beside its effect page. Shared documentation behavior lives in `effects/shared/`: Preview / Code / Docs tabs, clipboard access, pixel rulers, and live element measurements. All four interactions remain pure CSS.
 
 ## Adding an effect
 
@@ -85,5 +91,6 @@ Each component stylesheet lives beside its effect page. Shared documentation beh
 - Folder animation study inspired by [Aditya Sur / Inspora](https://x.com/insporadesign/status/2084184561123017088).
 - Value-card interaction study inspired by [Ana Arsonist / Inspora](https://x.com/insporadesign/status/2084136446617702499).
 - Document-folder interaction study inspired by [Aditya Sur / Inspora](https://x.com/insporadesign/status/2083951579808301435).
+- Theme-switcher interaction study inspired by [Mikolaj Staromlynski / Inspora](https://x.com/insporadesign/status/2083109498147709192).
 - Source-panel interaction informed by [LDRS / UI Ball](https://uiball.com/ldrs/).
 - Documentation and inspector information architecture informed by [Fluid Functionalism](https://www.fluidfunctionalism.com/docs/table), which is available under the MIT license.

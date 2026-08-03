@@ -6,12 +6,12 @@
     <link rel="icon" href="data:," />
     <meta
       name="description"
-      content="Preview, inspect, and copy a pure CSS document-folder interaction."
+      content="Preview, inspect, and copy a pure CSS glass light and dark theme switcher."
     />
-    <title>Document Folder — CSS Motion Lab</title>
+    <title>Glass Theme Switcher — CSS Motion Lab</title>
     <link rel="stylesheet" href="../shared/docs-shell.css" />
     <link rel="stylesheet" href="./page.css" />
-    <link rel="stylesheet" href="./document-folder.css" />
+    <link rel="stylesheet" href="./theme-switcher.css" />
     <script type="module" src="./app.js"></script>
   </head>
   <body>
@@ -40,16 +40,16 @@
           <span>Value Card Fan</span>
           <span>002</span>
         </a>
-        <a class="docs-nav__link is-active" href="./" aria-current="page">
+        <a class="docs-nav__link" href="../document-folder/">
           <span>Document Folder</span>
           <span>003</span>
         </a>
-        <a class="docs-nav__link" href="../theme-switcher/">
+        <a class="docs-nav__link is-active" href="./" aria-current="page">
           <span>Theme Switcher</span>
           <span>004</span>
         </a>
         <div class="docs-nav__future">
-          A three-stage hover state machine: open the cover, lift the collection, then fan the rear document.
+          A native theme switch rebuilt as one moving glass lens, one warm light pool, and one indicator.
         </div>
 
         <div class="docs-nav__footer">
@@ -60,22 +60,22 @@
 
       <main class="docs-main" id="effect-content">
         <header class="effect-intro">
-          <p class="breadcrumb"><span>Effects /</span> 3D collection</p>
-          <h1>Document Folder</h1>
+          <p class="breadcrumb"><span>Effects /</span> Theme control</p>
+          <h1>Glass Theme Switcher</h1>
           <div class="effect-intro__row">
             <p class="effect-intro__description">
-              A compact archive opens into three panels, raises a two-piece postage collection,
-              and lets the rear stamp fan outward. The complete state machine is driven by CSS.
+              A compact light and dark control whose active state behaves like a warm glass lens.
+              The surface, glow, icon color, and indicator cross the theme boundary together.
             </p>
             <div class="effect-meta" aria-label="Effect metadata">
               <span>HTML + CSS</span>
               <span>0 dependencies</span>
-              <span>821 frames studied</span>
+              <span>296 frames studied</span>
             </div>
           </div>
         </header>
 
-        <section class="effect-workspace" aria-label="Document Folder explorer">
+        <section class="effect-workspace" aria-label="Glass Theme Switcher explorer">
           <div class="workspace-bar">
             <div class="view-tabs" role="tablist" aria-label="Effect view">
               <button class="view-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-preview" data-view="preview">Preview</button>
@@ -90,50 +90,35 @@
           </div>
 
           <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
-            <div class="preview-frame document-folder-preview-frame" data-inspect-frame>
+            <div class="preview-frame theme-switcher-preview-frame" data-inspect-frame>
               <div class="preview-canvas" data-inspect-scope>
-                <div
-                  class="document-folder"
-                  tabindex="0"
-                  role="group"
-                  aria-label="Interactive postage document folder"
-                  data-inspect-default
-                >
-                  <span class="document-folder__scene">
-                    <span class="document-folder__back" aria-hidden="true">
-                      <span class="document-folder__pocket"></span>
-                    </span>
-
-                    <span class="postage-stack">
-                      <button class="postage postage--rear" type="button" aria-label="Reveal Island Mail stamp">
-                        <span class="postage__field">
-                          <span class="postage__island-title">ISLAND<br />MAIL</span>
-                          <span class="postage__island-mark"></span>
-                        </span>
-                      </button>
-
-                      <button class="postage postage--front" type="button" aria-label="Lift Quiet Hours stamp">
-                        <span class="postage__field">
-                          <span class="postage__vertical">静かな時間</span>
-                          <span class="postage__bird"></span>
-                          <span class="postage__country">NIPPON</span>
-                          <span class="postage__value">63</span>
-                        </span>
-                      </button>
-                    </span>
-
-                    <span class="document-folder__panel document-folder__panel--left" aria-hidden="true">
-                      <span class="document-folder__mark"><i></i></span>
-                      <span class="document-folder__meta">
-                        <span>Stamp collection</span>
-                        <small>02 total</small>
+                <div class="theme-switcher-demo">
+                  <div class="theme-switcher" data-inspect-default>
+                    <input
+                      class="theme-switcher__input"
+                      id="theme-mode-preview"
+                      type="checkbox"
+                      role="switch"
+                      aria-label="Use light theme"
+                      data-inspect-ignore
+                    />
+                    <label class="theme-switcher__control" for="theme-mode-preview">
+                      <span class="theme-switcher__lens" aria-hidden="true"></span>
+                      <span class="theme-switcher__option theme-switcher__option--moon">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                          <path d="M47 39.5A22.5 22.5 0 0 1 20 8a22 22 0 1 0 27 31.5Z" />
+                          <path d="M43 9v8M39 13h8M54 20v7M50.5 23.5h7" />
+                        </svg>
                       </span>
-                    </span>
-
-                    <span class="document-folder__panel document-folder__panel--right" aria-hidden="true">
-                      <span class="document-folder__index">ARCHIVE / 01</span>
-                    </span>
-                  </span>
+                      <span class="theme-switcher__option theme-switcher__option--sun">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                          <circle cx="32" cy="32" r="12" />
+                          <path d="M32 7v7M32 50v7M7 32h7M50 32h7M14.3 14.3l5 5M44.7 44.7l5 5M49.7 14.3l-5 5M19.3 44.7l-5 5" />
+                        </svg>
+                      </span>
+                      <span class="theme-switcher__indicator" aria-hidden="true"></span>
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -142,15 +127,15 @@
                 <div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
                 <div class="inspect-box" data-inspect-box></div>
                 <div class="inspect-tooltip" data-inspect-tooltip>
-                  <strong>div.document-folder</strong>
-                  <span>grid · 605 × 419px</span>
+                  <strong>div.theme-switcher</strong>
+                  <span>block · live size</span>
                 </div>
               </div>
             </div>
 
             <footer class="preview-footer">
-              <span><strong>Live</strong> · Enter the folder, then move onto either stamp</span>
-              <span>Hover / focus · no JavaScript</span>
+              <span><strong>Live</strong> · Click either half to cross the theme boundary</span>
+              <span>Click / Space · no JavaScript</span>
             </footer>
           </div>
 
@@ -177,40 +162,39 @@
 
           <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
             <p class="docs-panel__lead">
-              The 27.4-second reference recording contains repeated demonstrations of the same
-              four phases. Frame inspection shows that pointer position—not a click or carousel
-              state—controls the entire interaction.
+              The 9.9-second source contains four repeated switches across 296 frames. Each state
+              rests for roughly two seconds; the visible transition occupies only six frames.
             </p>
 
             <section class="docs-section" aria-labelledby="install-title">
               <p class="eyebrow">01 / Setup</p>
               <h2 id="install-title">Installation</h2>
-              <p>Copy the component stylesheet and preserve the panel and postage-stack hierarchy.</p>
+              <p>Copy the component stylesheet, then keep the checkbox immediately before its label.</p>
               <div class="install-block">
-                <code>&lt;link rel="stylesheet" href="/document-folder.css" /&gt;</code>
-                <button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/document-folder.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button>
+                <code>&lt;link rel="stylesheet" href="/theme-switcher.css" /&gt;</code>
+                <button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/theme-switcher.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button>
               </div>
             </section>
 
             <section class="docs-section" aria-labelledby="anatomy-title">
               <p class="eyebrow">02 / Anatomy</p>
-              <h2 id="anatomy-title">Three nested hover zones</h2>
+              <h2 id="anatomy-title">One state, three moving layers</h2>
               <ol class="usage-steps">
-                <li><code>.document-folder:hover</code> separates the two front panels to reveal the pocket.</li>
-                <li><code>:has(.postage:hover)</code> raises the collection and recloses the panels behind it.</li>
-                <li>Hovering the exposed rear stamp translates and rotates only that document.</li>
+                <li>The native checkbox owns state and remains available to keyboard and assistive technology.</li>
+                <li><code>.theme-switcher__lens</code> contains the active glass material and its orange light pool.</li>
+                <li><code>.theme-switcher__indicator</code> follows the lens while the parent surface crossfades.</li>
               </ol>
             </section>
 
             <section class="docs-section" aria-labelledby="frames-title">
               <p class="eyebrow">03 / Frame analysis</p>
-              <h2 id="frames-title">Observed motion phases</h2>
-              <p>The source was sampled at 100ms during transitions and at 500ms across the full capture.</p>
+              <h2 id="frames-title">Observed transition phases</h2>
+              <p>The source was sampled at 20fps around both transition directions and checked against the full 30fps capture.</p>
               <div class="frame-grid">
-                <div><span>0—760ms</span><strong>Unfold</strong><p>Side panels translate outward and rotate 18° around their inner hinges.</p></div>
-                <div><span>0—880ms</span><strong>Raise</strong><p>The two stamps scale and move upward as one preserved stack.</p></div>
-                <div><span>220—980ms</span><strong>Reclose</strong><p>When the pointer reaches a stamp, the panels close behind the enlarged collection.</p></div>
-                <div><span>0—620ms</span><strong>Fan</strong><p>The rear stamp travels right and rotates to reveal its full printed face.</p></div>
+                <div><span>0—33ms</span><strong>Commit</strong><p>The target state is selected without an anticipation movement.</p></div>
+                <div><span>33—100ms</span><strong>Crossfade</strong><p>The full surface passes quickly through a neutral middle gray.</p></div>
+                <div><span>33—180ms</span><strong>Translate</strong><p>Lens, light pool, and short underline travel as one unit.</p></div>
+                <div><span>100—200ms</span><strong>Resolve</strong><p>Track, icon color, border, and shadow settle into the new material.</p></div>
               </div>
             </section>
 
@@ -220,10 +204,10 @@
               <table class="api-table">
                 <thead><tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr></thead>
                 <tbody>
-                  <tr><td><code>--document-folder-width</code></td><td><code>17rem—22rem</code></td><td>Scales the complete object and its postage collection.</td></tr>
-                  <tr><td><code>--document-folder-green</code></td><td><code>#063f35</code></td><td>Primary archive material color.</td></tr>
-                  <tr><td><code>--document-folder-ease</code></td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code></td><td>Shared physical settling curve.</td></tr>
-                  <tr><td><code>.postage--rear</code></td><td>Second layer</td><td>Receives the independent fan transform.</td></tr>
+                  <tr><td><code>--theme-switcher-width</code></td><td><code>19rem—31rem</code></td><td>Scales the complete control and icon geometry.</td></tr>
+                  <tr><td><code>--theme-switcher-duration</code></td><td><code>280ms</code></td><td>Shared lens and indicator travel time.</td></tr>
+                  <tr><td><code>--theme-switcher-ease</code></td><td><code>cubic-bezier(0.22, 1, 0.36, 1)</code></td><td>Fast-out physical settling curve.</td></tr>
+                  <tr><td><code>:has(input:checked)</code></td><td>Light state</td><td>Lets the surrounding surface react without JavaScript.</td></tr>
                 </tbody>
               </table>
             </section>
@@ -231,7 +215,7 @@
             <section class="docs-section" aria-labelledby="accessibility-title">
               <p class="eyebrow">05 / Behavior</p>
               <h2 id="accessibility-title">Accessibility</h2>
-              <p>The root can be focused to open the folder, each stamp is a native button, focus-visible mirrors hover, and reduced-motion users receive the same states without long transitions.</p>
+              <p>The control uses a native checkbox with switch semantics, supports click and Space, exposes a visible focus ring, and removes transition duration when reduced motion is requested.</p>
             </section>
           </article>
         </section>
@@ -242,25 +226,25 @@
           <p class="rail-card__eyebrow">Frame map</p>
           <h2 id="motion-title">Observed motion</h2>
           <ol class="motion-timeline">
-            <li><time>000—760</time><span>Cover panels separate around the center pocket.</span></li>
-            <li><time>000—880</time><span>Collection rises as a single transform layer.</span></li>
-            <li><time>220—980</time><span>Panels reclose behind the selected stamp.</span></li>
-            <li><time>000—620</time><span>Rear postage fans right on its own hinge.</span></li>
+            <li><time>000—033</time><span>Native state commits with no anticipation.</span></li>
+            <li><time>033—100</time><span>Backdrop crosses a neutral gray midpoint.</span></li>
+            <li><time>033—180</time><span>Lens, glow, and indicator translate together.</span></li>
+            <li><time>100—200</time><span>Material and icon contrast resolve.</span></li>
           </ol>
-          <p class="rail-note">Analysis source: 821 frames at 30fps, 1240 × 1080.</p>
+          <p class="rail-note">Analysis source: 296 frames at 29.97fps, 1600 × 1200.</p>
         </section>
 
         <section class="rail-card" aria-labelledby="inspector-title">
           <p class="rail-card__eyebrow">Inspector</p>
           <h2 id="inspector-title">Live metrics</h2>
           <dl class="metric-list">
-            <div><dt>Selector</dt><dd data-metric="selector">div.document-folder</dd></div>
+            <div><dt>Selector</dt><dd data-metric="selector">div.theme-switcher</dd></div>
             <div><dt>Size</dt><dd data-metric="size">—</dd></div>
-            <div><dt>Display</dt><dd data-metric="display">grid</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">block</dd></div>
             <div><dt>Padding</dt><dd data-metric="padding">—</dd></div>
             <div><dt>Margin</dt><dd data-metric="margin">—</dd></div>
           </dl>
-          <p class="rail-note">Inspect freezes the open state so the hinge panels, pocket, stack, and stamp artwork can be measured independently.</p>
+          <p class="rail-note">Enable Inspect, then move across the track, lens, icons, and indicator to measure each layer.</p>
         </section>
       </aside>
     </div>
