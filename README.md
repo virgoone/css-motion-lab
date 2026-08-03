@@ -5,6 +5,7 @@ A small, dependency-free collection of tactile CSS motion studies. Each effect i
 ## Included effects
 
 - **Folder Pocket** — layered documents and a restrained 3D pocket opening, with amber, graphite, and pearl themes.
+- **Value Card Fan** — overlapping equal-width cards that part around the hovered or keyboard-focused value.
 
 ## Development
 
@@ -52,10 +53,15 @@ Node.js is pinned to `22.16.0` through `.node-version`. The project uses relativ
     ├── shared/
     │   ├── docs-shell.css
     │   └── docs-shell.js
-    └── folder/
+    ├── folder/
         ├── index.html
         ├── page.css
         ├── folder.css
+        └── app.js
+    └── value-cards/
+        ├── index.html
+        ├── page.css
+        ├── value-cards.css
         └── app.js
 ```
 
@@ -71,5 +77,6 @@ The component itself lives in `effects/folder/folder.css`. Shared documentation 
 ## References
 
 - Folder animation study inspired by [Aditya Sur / Inspora](https://x.com/insporadesign/status/2084184561123017088).
+- Value-card interaction study inspired by [Ana Arsonist / Inspora](https://x.com/insporadesign/status/2084136446617702499).
 - Source-panel interaction informed by [LDRS / UI Ball](https://uiball.com/ldrs/).
 - Documentation and inspector information architecture informed by [Fluid Functionalism](https://www.fluidfunctionalism.com/docs/table), which is available under the MIT license.

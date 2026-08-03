@@ -1,0 +1,116 @@
+.value-preview-frame {
+  background:
+    radial-gradient(circle at 50% 42%, rgb(216 206 255 / 32%), transparent 28rem),
+    #f7f7fa;
+}
+
+.value-preview-frame .preview-canvas {
+  min-height: 38rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4rem 2.3rem 3rem;
+  scrollbar-color: rgb(67 61 101 / 20%) transparent;
+  scrollbar-width: thin;
+}
+
+.value-preview-frame .value-deck {
+  flex: 0 0 auto;
+}
+
+.value-preview-frame.is-inspecting,
+.value-preview-frame.is-inspecting .value-card {
+  cursor: crosshair;
+}
+
+.value-preview-frame.is-inspecting .value-card {
+  filter: none !important;
+  transform: translate3d(0, var(--rest-y), 0) rotate(var(--rest-rotate)) !important;
+  transition: none !important;
+}
+
+.motion-timeline {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.motion-timeline li {
+  display: grid;
+  grid-template-columns: 3.1rem 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(255 255 255 / 7%);
+  color: rgb(241 240 234 / 43%);
+  font-size: 0.62rem;
+  line-height: 1.55;
+}
+
+.motion-timeline time {
+  color: #dca250;
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.5rem;
+}
+
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 7%);
+}
+
+.frame-grid div {
+  min-height: 7.3rem;
+  padding: 0.9rem;
+  background: rgb(255 255 255 / 2%);
+}
+
+.frame-grid span {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: #dca250;
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.5rem;
+}
+
+.frame-grid strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.frame-grid p {
+  margin: 0;
+  color: rgb(241 240 234 / 38%);
+  font-size: 0.61rem;
+  line-height: 1.5;
+}
+
+.value-card.is-demo-active {
+  z-index: 10;
+}
+
+@media (max-width: 780px) {
+  .value-preview-frame .preview-canvas {
+    display: block;
+    min-height: 33rem;
+    padding-inline: 1.2rem;
+  }
+
+  .value-preview-frame .value-deck {
+    margin-block: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .frame-grid {
+    grid-template-columns: 1fr;
+  }
+}

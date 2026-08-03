@@ -215,6 +215,10 @@ svg {
   outline: 1px solid transparent;
 }
 
+.effect-card + .effect-card {
+  margin-top: clamp(4.5rem, 8vw, 7.5rem);
+}
+
 .effect-card:focus-visible {
   outline-color: #bf7d2a;
   outline-offset: 0.4rem;
@@ -243,6 +247,28 @@ svg {
 
 .effect-card__preview .folder {
   --folder-width: clamp(17rem, 33vw, 31rem);
+}
+
+.effect-card--value .effect-card__preview {
+  background:
+    radial-gradient(circle at 50% 42%, rgb(211 201 255 / 42%), transparent 30rem),
+    #f7f7fa;
+}
+
+.effect-card--value .effect-card__preview::before {
+  border-color: rgb(32 33 31 / 8%);
+}
+
+.effect-card--value .value-deck {
+  --value-card-width: clamp(8.5rem, 14vw, 14rem);
+  --value-card-overlap: clamp(-4.4rem, -5vw, -2.8rem);
+  --value-card-spread: clamp(1rem, 2.4vw, 2.2rem);
+  flex: 0 0 auto;
+}
+
+.effect-card--value .effect-card__number,
+.effect-card--value .effect-card__hint {
+  color: rgb(32 33 31 / 47%);
 }
 
 .effect-card__number,
@@ -379,6 +405,12 @@ svg {
 
   .effect-card__preview .folder {
     --folder-width: min(76vw, 22rem);
+  }
+
+  .effect-card--value .value-deck {
+    --value-card-width: min(29vw, 7.8rem);
+    --value-card-overlap: max(-11vw, -2.7rem);
+    --value-card-spread: 0.7rem;
   }
 
   .effect-card__number {

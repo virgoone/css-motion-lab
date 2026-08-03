@@ -9,6 +9,17 @@ export const effects = [
     href: "./effects/folder/",
     themes: ["Amber", "Graphite", "Pearl"],
     status: "Ready"
+  },
+  {
+    id: "002",
+    slug: "value-cards",
+    title: "Value Card Fan",
+    shortTitle: "Value Cards",
+    category: "Card interaction",
+    description: "An overlapping stack that parts around the hovered or focused value card.",
+    href: "./effects/value-cards/",
+    themes: ["Pastel"],
+    status: "Ready"
   }
 ];
 

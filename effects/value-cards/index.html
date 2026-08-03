@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Preview, inspect, and copy an overlapping CSS value-card interaction."
+    />
+    <title>Value Card Fan — CSS Motion Lab</title>
+    <link rel="stylesheet" href="../shared/docs-shell.css" />
+    <link rel="stylesheet" href="./page.css" />
+    <link rel="stylesheet" href="./value-cards.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#effect-content">Skip to effect</a>
+
+    <div class="docs-shell">
+      <aside class="docs-nav" aria-label="Effect documentation">
+        <a class="docs-brand" href="../../" aria-label="CSS Motion Lab home">
+          <span class="docs-brand__mark" aria-hidden="true"></span>
+          <span>CSS Motion Lab</span>
+        </a>
+
+        <a class="docs-nav__back" href="../../">
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M15 9H3m5-5L3 9l5 5" />
+          </svg>
+          <span>All effects</span>
+        </a>
+
+        <p class="docs-nav__section">Components · 02</p>
+        <a class="docs-nav__link" href="../folder/">
+          <span>Folder Pocket</span>
+          <span>001</span>
+        </a>
+        <a class="docs-nav__link is-active" href="./" aria-current="page">
+          <span>Value Card Fan</span>
+          <span>002</span>
+        </a>
+        <div class="docs-nav__future">
+          Every card is an equal-width button. The apparent expansion comes from transform-only stack separation.
+        </div>
+
+        <div class="docs-nav__footer">
+          <span>Pure CSS</span>
+          <a href="https://github.com/virgoone/css-motion-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+
+      <main class="docs-main" id="effect-content">
+        <header class="effect-intro">
+          <p class="breadcrumb"><span>Effects /</span> Card interaction</p>
+          <h1>Value Card Fan</h1>
+          <div class="effect-intro__row">
+            <p class="effect-intro__description">
+              Five equal cards overlap into a compact fan. Hover or focus one card to lift it,
+              straighten its resting angle, and part the neighboring stack without animating layout.
+            </p>
+            <div class="effect-meta" aria-label="Effect metadata">
+              <span>HTML + CSS</span>
+              <span>0 dependencies</span>
+              <span>5 cards</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="effect-workspace" aria-label="Value Card Fan explorer">
+          <div class="workspace-bar">
+            <div class="view-tabs" role="tablist" aria-label="Effect view">
+              <button class="view-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-preview" data-view="preview">Preview</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-code" data-view="code">Code</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-docs" data-view="docs">Docs</button>
+            </div>
+
+            <button class="inspect-toggle" type="button" aria-pressed="false" data-inspect-toggle data-inspect-only>
+              <span>Inspect</span>
+              <span class="inspect-toggle__switch" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
+            <div class="preview-frame value-preview-frame" data-inspect-frame>
+              <div class="preview-canvas" data-inspect-scope>
+                <div class="value-deck" aria-label="Company values">
+                  <button class="value-card" type="button" aria-label="Craft value card">
+                    <span class="value-card__art" aria-hidden="true">
+                      <span class="spirit spirit--craft"><span class="spirit__eyes"></span></span>
+                      <span class="spirit-prop spirit-prop--diamond"></span>
+                    </span>
+                    <span class="value-card__title">Craft</span>
+                    <span class="value-card__copy">We take pride in craft, attention to detail, resourcefulness, and meaningful progress.</span>
+                  </button>
+
+                  <button class="value-card" type="button" aria-label="Accountability value card">
+                    <span class="value-card__art" aria-hidden="true">
+                      <span class="spirit spirit--accountability"><span class="spirit__eyes"></span></span>
+                      <span class="spirit-prop spirit-prop--spark"></span>
+                    </span>
+                    <span class="value-card__title">Accountability</span>
+                    <span class="value-card__copy">We take responsibility for our decisions, actions, and results as one team.</span>
+                  </button>
+
+                  <button class="value-card" type="button" aria-label="Sisu value card" data-inspect-default>
+                    <span class="value-card__art" aria-hidden="true">
+                      <span class="spirit spirit--sisu"><span class="spirit__eyes"></span></span>
+                      <span class="spirit-prop spirit-prop--hat"></span>
+                      <span class="spirit-prop spirit-prop--flower"></span>
+                    </span>
+                    <span class="value-card__title">Sisu</span>
+                    <span class="value-card__copy">We cultivate inner strength and self-awareness and persevere in the face of obstacles.</span>
+                  </button>
+
+                  <button class="value-card" type="button" aria-label="Integrity value card">
+                    <span class="value-card__art" aria-hidden="true">
+                      <span class="spirit spirit--integrity"><span class="spirit__eyes"></span></span>
+                      <span class="spirit-prop spirit-prop--flag-pole"></span>
+                      <span class="spirit-prop spirit-prop--flag"></span>
+                    </span>
+                    <span class="value-card__title">Integrity</span>
+                    <span class="value-card__copy">We count on each other to be direct, honest, caring, and consistent in what we do.</span>
+                  </button>
+
+                  <button class="value-card" type="button" aria-label="Community value card">
+                    <span class="value-card__art" aria-hidden="true">
+                      <span class="spirit spirit--community-a"><span class="spirit__eyes"></span></span>
+                      <span class="spirit spirit--community-b"><span class="spirit__eyes"></span></span>
+                    </span>
+                    <span class="value-card__title">Community</span>
+                    <span class="value-card__copy">We create products that increase access and engender human connection and community.</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="inspect-overlay" data-inspect-overlay hidden aria-hidden="true">
+                <div class="inspect-ruler inspect-ruler--x" data-ruler-x></div>
+                <div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
+                <div class="inspect-box" data-inspect-box></div>
+                <div class="inspect-tooltip" data-inspect-tooltip>
+                  <strong>button.value-card</strong>
+                  <span>grid · 240 × 307px</span>
+                </div>
+              </div>
+            </div>
+
+            <footer class="preview-footer">
+              <span><strong>Live</strong> · Hover or tab through the five cards</span>
+              <span>Transform-only stack separation</span>
+            </footer>
+          </div>
+
+          <div class="code-panel" id="panel-code" role="tabpanel" data-panel="code" hidden>
+            <div class="code-toolbar">
+              <div class="snippet-tabs" role="tablist" aria-label="Code format">
+                <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-snippet="html">HTML</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="css">CSS</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="full">Full page</button>
+              </div>
+              <button class="copy-action" type="button" data-copy-code>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="7" y="7" width="9" height="9" rx="2" />
+                  <path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
+                </svg>
+                <span data-copy-label>Copy code</span>
+              </button>
+            </div>
+            <pre class="code-window"><code data-code-output>Loading source…</code></pre>
+            <div class="code-toolbar code-toolbar--footer">
+              <p class="code-status" data-copy-status aria-live="polite">HTML · ready to copy</p>
+            </div>
+          </div>
+
+          <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
+            <p class="docs-panel__lead">
+              The reference is a 6.3-second screen recording of a pointer crossing an overlapping
+              card deck. Frame inspection shows equal card widths throughout; the expansion is an
+              illusion created by translating the covered neighbors away from the active card.
+            </p>
+
+            <section class="docs-section" aria-labelledby="install-title">
+              <p class="eyebrow">01 / Setup</p>
+              <h2 id="install-title">Installation</h2>
+              <p>Copy the component stylesheet into your project and load it on the page.</p>
+              <div class="install-block">
+                <code>&lt;link rel="stylesheet" href="/value-cards.css" /&gt;</code>
+                <button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/value-cards.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button>
+              </div>
+            </section>
+
+            <section class="docs-section" aria-labelledby="anatomy-title">
+              <p class="eyebrow">02 / Anatomy</p>
+              <h2 id="anatomy-title">How the fan works</h2>
+              <p>Cards keep a fixed size and overlap with a negative inline margin. Modern relational selectors separate the two neighbor groups around the hovered or keyboard-focused card.</p>
+              <ol class="usage-steps">
+                <li>Every card starts with a small independent Y offset and resting rotation.</li>
+                <li><code>:has(~ .value-card:hover)</code> moves cards before the active card to the left.</li>
+                <li><code>.value-card:hover ~ .value-card</code> moves following cards to the right.</li>
+              </ol>
+            </section>
+
+            <section class="docs-section" aria-labelledby="frames-title">
+              <p class="eyebrow">03 / Frame analysis</p>
+              <h2 id="frames-title">Motion phases</h2>
+              <p>The production easing condenses the visible phases from the reference capture into one transform transition.</p>
+              <div class="frame-grid">
+                <div><span>0—120ms</span><strong>Acquire</strong><p>The active card receives the top stacking layer immediately.</p></div>
+                <div><span>120—420ms</span><strong>Part</strong><p>Neighbor groups translate outward as the active card straightens and rises.</p></div>
+                <div><span>420—680ms</span><strong>Settle</strong><p>The deck eases into its final spacing and the deeper shadow catches up.</p></div>
+              </div>
+            </section>
+
+            <section class="docs-section" aria-labelledby="api-title">
+              <p class="eyebrow">04 / Contract</p>
+              <h2 id="api-title">CSS API</h2>
+              <p>Change the public deck variables to scale the effect without rewriting the interaction selectors.</p>
+              <table class="api-table">
+                <thead><tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr></thead>
+                <tbody>
+                  <tr><td><code>--value-card-width</code></td><td><code>clamp(10.75rem, 17vw, 13.2rem)</code></td><td>Controls card and deck scale.</td></tr>
+                  <tr><td><code>--value-card-overlap</code></td><td><code>-3rem to -4rem</code></td><td>Sets how much of each resting card is covered.</td></tr>
+                  <tr><td><code>--value-card-spread</code></td><td><code>1.35rem to 2.3rem</code></td><td>Distance each neighbor group parts on interaction.</td></tr>
+                  <tr><td><code>--rest-y</code></td><td>Per card</td><td>Creates the loose hand-arranged baseline.</td></tr>
+                  <tr><td><code>--rest-rotate</code></td><td>Per card</td><td>Sets each card's resting tilt.</td></tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="docs-section" aria-labelledby="accessibility-title">
+              <p class="eyebrow">05 / Behavior</p>
+              <h2 id="accessibility-title">Accessibility</h2>
+              <p>Native buttons provide keyboard focus, focus uses the same reveal as hover, horizontal overflow remains scrollable on small screens, and reduced-motion users receive the final state without a long transition.</p>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <aside class="properties-rail" aria-label="Effect properties">
+        <section class="rail-card" aria-labelledby="motion-title">
+          <p class="rail-card__eyebrow">Frame map</p>
+          <h2 id="motion-title">Observed motion</h2>
+          <ol class="motion-timeline">
+            <li><time>0—120</time><span>Stacking layer changes first.</span></li>
+            <li><time>120—420</time><span>Active card lifts; neighbors part.</span></li>
+            <li><time>420—680</time><span>Shadow and spacing settle.</span></li>
+          </ol>
+          <p class="rail-note">Analysis source: 189 frames at 30fps, 1714 × 1080.</p>
+        </section>
+
+        <section class="rail-card" aria-labelledby="inspector-title">
+          <p class="rail-card__eyebrow">Inspector</p>
+          <h2 id="inspector-title">Live metrics</h2>
+          <dl class="metric-list">
+            <div><dt>Selector</dt><dd data-metric="selector">button.value-card</dd></div>
+            <div><dt>Size</dt><dd data-metric="size">—</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">grid</dd></div>
+            <div><dt>Padding</dt><dd data-metric="padding">—</dd></div>
+            <div><dt>Margin</dt><dd data-metric="margin">—</dd></div>
+          </dl>
+          <p class="rail-note">Inspect freezes the fan, then measures the card, spirit, text, and prop layers independently.</p>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

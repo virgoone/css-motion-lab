@@ -179,7 +179,11 @@ export function setupEffectDocs({ snippets, initialSnippet = "html", initialView
 
     if (inspecting) {
       renderRulers();
-      selectedElement ||= inspectScope?.querySelector(".folder-variant.is-selected .folder") ?? inspectScope;
+      selectedElement ||=
+        inspectScope?.querySelector("[data-inspect-default]") ??
+        inspectScope?.querySelector(".folder-variant.is-selected .folder") ??
+        inspectScope?.firstElementChild ??
+        inspectScope;
       setInspectMetrics(selectedElement);
     }
   };

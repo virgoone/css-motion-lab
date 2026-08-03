@@ -1,0 +1,366 @@
+.value-deck,
+.value-deck *,
+.value-deck *::before,
+.value-deck *::after {
+  box-sizing: border-box;
+}
+
+.value-deck {
+  --value-card-width: clamp(10.75rem, 17vw, 13.2rem);
+  --value-card-height: calc(var(--value-card-width) * 1.28);
+  --value-card-overlap: clamp(-4rem, -4vw, -3rem);
+  --value-card-spread: clamp(1.35rem, 2.5vw, 2.3rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: calc(var(--value-card-height) + 3rem);
+  margin-inline: auto;
+  padding-inline: var(--value-card-spread);
+  isolation: isolate;
+  perspective: 70rem;
+}
+
+.value-card {
+  --rest-y: 0rem;
+  --rest-rotate: 0deg;
+  --card-bg:
+    radial-gradient(circle at 76% 23%, rgb(255 242 151 / 72%), transparent 27%),
+    linear-gradient(145deg, #dedcff, #aca9ec 72%);
+  position: relative;
+  display: grid;
+  flex: 0 0 var(--value-card-width);
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  width: var(--value-card-width);
+  height: var(--value-card-height);
+  margin: 0;
+  margin-left: var(--value-card-overlap);
+  padding: 0 1.05rem 1.15rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 46%);
+  border-radius: clamp(1.05rem, 1.7vw, 1.45rem);
+  outline: 0;
+  background: var(--card-bg);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 58%),
+    0 1rem 1.8rem -1.35rem rgb(75 69 140 / 42%);
+  color: #27263a;
+  font-family: "Geist", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transform: translate3d(0, var(--rest-y), 0) rotate(var(--rest-rotate));
+  transform-origin: 50% 92%;
+  transition:
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 520ms ease,
+    filter 420ms ease;
+  will-change: transform;
+}
+
+.value-card:first-child {
+  margin-left: 0;
+}
+
+.value-card:nth-child(1) {
+  --rest-y: 0.55rem;
+  --rest-rotate: -2deg;
+  --card-bg:
+    radial-gradient(circle at 68% 28%, rgb(195 255 142 / 86%), transparent 34%),
+    linear-gradient(145deg, #f4f1ff, #e8f4ee 76%);
+  z-index: 1;
+}
+
+.value-card:nth-child(2) {
+  --rest-y: 0.08rem;
+  --rest-rotate: 0.7deg;
+  --card-bg:
+    radial-gradient(circle at 72% 27%, rgb(255 225 128 / 68%), transparent 28%),
+    linear-gradient(145deg, #aaa7eb, #c2c0f1 72%);
+  z-index: 2;
+}
+
+.value-card:nth-child(3) {
+  --rest-y: 0.48rem;
+  --rest-rotate: 1.2deg;
+  --card-bg:
+    radial-gradient(circle at 75% 30%, rgb(255 186 217 / 78%), transparent 34%),
+    linear-gradient(145deg, #f0e9de, #d7a6e8 76%);
+  z-index: 3;
+}
+
+.value-card:nth-child(4) {
+  --rest-y: 0.18rem;
+  --rest-rotate: -0.9deg;
+  --card-bg:
+    radial-gradient(circle at 77% 27%, rgb(255 244 163 / 74%), transparent 29%),
+    linear-gradient(145deg, #d9d6ff, #e1b8ee 76%);
+  z-index: 4;
+}
+
+.value-card:nth-child(5) {
+  --rest-y: 0.2rem;
+  --rest-rotate: 1.6deg;
+  --card-bg:
+    radial-gradient(circle at 75% 27%, rgb(255 218 245 / 78%), transparent 32%),
+    linear-gradient(145deg, #c8c6fa, #a9a8e9 76%);
+  z-index: 5;
+}
+
+.value-card__art {
+  position: relative;
+  display: block;
+  min-height: 0;
+}
+
+.value-card__art::after {
+  content: "";
+  position: absolute;
+  right: -35%;
+  bottom: 1rem;
+  left: -20%;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 30%);
+  filter: blur(1rem);
+}
+
+.value-card__title {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-bottom: 0.52rem;
+  font-size: clamp(0.92rem, 1.45vw, 1.16rem);
+  font-weight: 590;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.value-card__copy {
+  position: relative;
+  z-index: 2;
+  display: block;
+  color: rgb(39 38 58 / 62%);
+  font-size: clamp(0.58rem, 0.82vw, 0.72rem);
+  line-height: 1.38;
+}
+
+.spirit {
+  --spirit-color: #f7f5f2;
+  position: absolute;
+  z-index: 2;
+  top: 27%;
+  left: 50%;
+  display: block;
+  width: 4.15rem;
+  height: 4.55rem;
+  border-radius: 52% 48% 44% 42% / 42% 46% 58% 58%;
+  background:
+    radial-gradient(circle at 34% 25%, rgb(255 255 255 / 92%), transparent 25%),
+    linear-gradient(145deg, var(--spirit-color), #e8e3f2);
+  box-shadow:
+    inset -0.55rem -0.7rem 1.05rem rgb(151 137 202 / 16%),
+    0 0.95rem 1.3rem -0.9rem rgb(91 79 145 / 48%);
+  transform: translate3d(-50%, -50%, 0) rotate(-6deg);
+}
+
+.spirit::before,
+.spirit::after {
+  content: "";
+  position: absolute;
+  bottom: -0.05rem;
+  width: 2.1rem;
+  height: 1.85rem;
+  background: inherit;
+}
+
+.spirit::before {
+  left: -0.38rem;
+  border-radius: 50% 38% 55% 52%;
+  transform: rotate(18deg);
+}
+
+.spirit::after {
+  right: -0.35rem;
+  border-radius: 38% 50% 52% 55%;
+  transform: rotate(-18deg);
+}
+
+.spirit__eyes {
+  position: absolute;
+  z-index: 3;
+  top: 1.27rem;
+  left: 1.55rem;
+  width: 0.28rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: #30213f;
+  box-shadow: 0.68rem 0 #30213f;
+}
+
+.spirit-prop {
+  position: absolute;
+  z-index: 3;
+  display: block;
+}
+
+.spirit-prop--diamond {
+  top: 24%;
+  left: 31%;
+  width: 1.08rem;
+  height: 1.65rem;
+  background: linear-gradient(145deg, #b9ff58, #54e599);
+  clip-path: polygon(50% 0, 100% 48%, 50% 100%, 0 48%);
+  filter: drop-shadow(0 0.3rem 0.4rem rgb(118 224 111 / 35%));
+  transform: rotate(-7deg);
+}
+
+.spirit-prop--spark {
+  right: 20%;
+  bottom: 25%;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: linear-gradient(145deg, #fff878, #d6ff65);
+  clip-path: polygon(50% 0, 61% 36%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 36%);
+  filter: drop-shadow(0 0.3rem 0.4rem rgb(229 255 93 / 38%));
+  transform: rotate(16deg);
+}
+
+.spirit-prop--hat {
+  top: 17%;
+  left: 38%;
+  width: 4.5rem;
+  height: 2.2rem;
+  border-radius: 3.6rem 3.6rem 0.55rem 0.55rem;
+  background: linear-gradient(145deg, #453078, #7d3d9c);
+  transform: rotate(7deg);
+}
+
+.spirit-prop--flower {
+  top: 40%;
+  right: 23%;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.35rem dotted #d9ff70;
+  border-radius: 50%;
+  background: #fff29a;
+  box-shadow: 0 0.45rem 0 -0.32rem #66dc7b;
+}
+
+.spirit-prop--flag-pole {
+  top: 16%;
+  left: 47%;
+  width: 0.22rem;
+  height: 5.5rem;
+  border-radius: 999px;
+  background: #d9ff72;
+  transform: rotate(31deg);
+  transform-origin: 50% 100%;
+}
+
+.spirit-prop--flag {
+  top: 18%;
+  left: 50%;
+  width: 3.2rem;
+  height: 2.05rem;
+  border-radius: 0.2rem 0.45rem 0.45rem 0.2rem;
+  background: linear-gradient(145deg, #6852d9, #8751ef);
+  clip-path: polygon(0 0, 100% 8%, 86% 50%, 100% 92%, 0 100%);
+  transform: rotate(5deg);
+}
+
+.spirit-prop--flag::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.15rem;
+  height: 0.55rem;
+  border: 0.18rem solid #f3efff;
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.spirit--accountability {
+  top: 31%;
+  transform: translate3d(-50%, -50%, 0) rotate(12deg);
+}
+
+.spirit--sisu {
+  top: 34%;
+}
+
+.spirit--integrity {
+  top: 36%;
+  left: 43%;
+  transform: translate3d(-50%, -50%, 0) rotate(5deg) scale(0.92);
+}
+
+.spirit--community-a,
+.spirit--community-b {
+  top: 32%;
+  width: 3.25rem;
+  height: 3.8rem;
+}
+
+.spirit--community-a {
+  left: 43%;
+  --spirit-color: #f1e8f7;
+  transform: translate3d(-50%, -50%, 0) rotate(-8deg);
+}
+
+.spirit--community-b {
+  left: 63%;
+  --spirit-color: #f8d9f5;
+  transform: translate3d(-50%, -50%, 0) rotate(9deg);
+}
+
+.spirit--community-a .spirit__eyes,
+.spirit--community-b .spirit__eyes {
+  top: 1.1rem;
+  left: 1.18rem;
+  transform: scale(0.8);
+}
+
+.value-card:has(~ .value-card:is(:hover, :focus-visible)) {
+  transform: translate3d(calc(var(--value-card-spread) * -1), var(--rest-y), 0)
+    rotate(var(--rest-rotate));
+}
+
+.value-card:is(:hover, :focus-visible) ~ .value-card {
+  transform: translate3d(var(--value-card-spread), var(--rest-y), 0) rotate(var(--rest-rotate));
+}
+
+.value-card:is(:hover, :focus-visible) {
+  z-index: 10;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 68%),
+    0 1.75rem 2.8rem -1.55rem rgb(75 69 140 / 58%);
+  transform: translate3d(0, -0.75rem, 1rem) rotate(0deg) scale(1.025);
+}
+
+.value-deck:has(.value-card:is(:hover, :focus-visible))
+  .value-card:not(:hover, :focus-visible) {
+  filter: saturate(0.92) brightness(0.99);
+}
+
+@media (max-width: 720px) {
+  .value-deck {
+    --value-card-width: min(56vw, 13.5rem);
+    --value-card-overlap: min(-18vw, -3.65rem);
+    --value-card-spread: 1.15rem;
+    justify-content: flex-start;
+    width: max-content;
+    max-width: none;
+    padding-right: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-card {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
