@@ -90,37 +90,95 @@
       <section class="preview-stage" aria-labelledby="preview-title">
         <div class="preview-stage__meta">
           <p>Live preview</p>
-          <span>Hover, focus, or press</span>
+          <span>Hover any color · select for code</span>
         </div>
 
         <div class="preview-stage__canvas">
-          <button
-            class="folder folder--amber"
-            id="live-folder"
-            type="button"
-            aria-label="Preview the Folder Pocket interaction"
-          >
-            <span class="folder__object" aria-hidden="true">
-              <span class="folder__back"></span>
-              <span class="folder__papers">
-                <span class="paper paper--rear"></span>
-                <span class="paper paper--left"></span>
-                <span class="paper paper--right"></span>
-              </span>
-              <span class="folder__front">
-                <span class="folder__label">
-                  <span>Design Folder</span>
-                  <small>45 files</small>
+          <div class="folder-gallery" aria-label="Folder color previews">
+            <div class="folder-variant folder-variant--graphite">
+              <span class="folder-variant__name"><b>02</b> Graphite</span>
+              <button
+                class="folder folder--graphite"
+                type="button"
+                data-preview-theme="graphite"
+                aria-label="Preview and select the Graphite Folder Pocket"
+                aria-pressed="false"
+              >
+                <span class="folder__object" aria-hidden="true">
+                  <span class="folder__back"></span>
+                  <span class="folder__papers">
+                    <span class="paper paper--rear"></span>
+                    <span class="paper paper--left"></span>
+                    <span class="paper paper--right"></span>
+                  </span>
+                  <span class="folder__front">
+                    <span class="folder__label">
+                      <span>Design Folder</span>
+                      <small>45 files</small>
+                    </span>
+                  </span>
                 </span>
-              </span>
-            </span>
-          </button>
+              </button>
+            </div>
+
+            <div class="folder-variant folder-variant--amber is-selected">
+              <span class="folder-variant__name"><b>01</b> Amber</span>
+              <button
+                class="folder folder--amber"
+                type="button"
+                data-preview-theme="amber"
+                aria-label="Preview and select the Amber Folder Pocket"
+                aria-pressed="true"
+              >
+                <span class="folder__object" aria-hidden="true">
+                  <span class="folder__back"></span>
+                  <span class="folder__papers">
+                    <span class="paper paper--rear"></span>
+                    <span class="paper paper--left"></span>
+                    <span class="paper paper--right"></span>
+                  </span>
+                  <span class="folder__front">
+                    <span class="folder__label">
+                      <span>Design Folder</span>
+                      <small>45 files</small>
+                    </span>
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <div class="folder-variant folder-variant--pearl">
+              <span class="folder-variant__name"><b>03</b> Pearl</span>
+              <button
+                class="folder folder--pearl"
+                type="button"
+                data-preview-theme="pearl"
+                aria-label="Preview and select the Pearl Folder Pocket"
+                aria-pressed="false"
+              >
+                <span class="folder__object" aria-hidden="true">
+                  <span class="folder__back"></span>
+                  <span class="folder__papers">
+                    <span class="paper paper--rear"></span>
+                    <span class="paper paper--left"></span>
+                    <span class="paper paper--right"></span>
+                  </span>
+                  <span class="folder__front">
+                    <span class="folder__label">
+                      <span>Design Folder</span>
+                      <small>45 files</small>
+                    </span>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="preview-identity">
-          <span>01 / 01</span>
+          <span>01 / 03</span>
           <span class="preview-identity__slash">//</span>
-          <h2 id="preview-title">Folder Pocket</h2>
+          <h2 id="preview-title">Folder Pocket Trio</h2>
         </div>
       </section>
 
@@ -145,7 +203,9 @@
           </button>
         </div>
 
-        <p class="theme-panel__note">The selected theme is reflected in the HTML snippet.</p>
+        <p class="theme-panel__note">
+          All three remain visible. Select a color to update the copy-ready HTML.
+        </p>
       </aside>
     </main>
   </body>

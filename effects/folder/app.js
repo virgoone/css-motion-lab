@@ -3,9 +3,9 @@ import folderCss from "./folder.css?raw";
 const codeOutput = document.querySelector("#code-output");
 const copyButton = document.querySelector("#copy-button");
 const copyStatus = document.querySelector("#copy-status");
-const liveFolder = document.querySelector("#live-folder");
 const tabs = [...document.querySelectorAll("[data-snippet]")];
 const themeOptions = [...document.querySelectorAll("[data-theme]")];
+const previewFolders = [...document.querySelectorAll("[data-preview-theme]")];
 
 let activeSnippet = "html";
 let activeTheme = "amber";
@@ -83,14 +83,18 @@ const selectSnippet = (nextSnippet) => {
 };
 
 const selectTheme = (nextTheme) => {
-  liveFolder.classList.remove(`folder--${activeTheme}`);
   activeTheme = nextTheme;
-  liveFolder.classList.add(`folder--${activeTheme}`);
 
   themeOptions.forEach((option) => {
     const isActive = option.dataset.theme === activeTheme;
     option.classList.toggle("is-active", isActive);
     option.setAttribute("aria-pressed", String(isActive));
+  });
+
+  previewFolders.forEach((folder) => {
+    const isActive = folder.dataset.previewTheme === activeTheme;
+    folder.closest(".folder-variant").classList.toggle("is-selected", isActive);
+    folder.setAttribute("aria-pressed", String(isActive));
   });
 
   renderCode();
@@ -139,6 +143,10 @@ tabs.forEach((tab) => {
 
 themeOptions.forEach((option) => {
   option.addEventListener("click", () => selectTheme(option.dataset.theme));
+});
+
+previewFolders.forEach((folder) => {
+  folder.addEventListener("click", () => selectTheme(folder.dataset.previewTheme));
 });
 
 copyButton.addEventListener("click", copyActiveCode);

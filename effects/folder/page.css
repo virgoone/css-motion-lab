@@ -91,7 +91,7 @@ svg {
 
 .effect-page {
   display: grid;
-  grid-template-columns: minmax(24rem, 0.78fr) minmax(34rem, 1.4fr) minmax(12rem, 0.42fr);
+  grid-template-columns: minmax(24rem, 0.74fr) minmax(40rem, 1.62fr) minmax(12rem, 0.4fr);
   gap: clamp(1rem, 2vw, 2rem);
   align-items: center;
   min-height: 100dvh;
@@ -316,8 +316,71 @@ svg {
   min-height: 29rem;
 }
 
-.preview-stage__canvas .folder {
-  --folder-width: clamp(20rem, 30vw, 29rem);
+.folder-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.3rem, 1vw, 1rem);
+  align-items: center;
+  width: 100%;
+  padding: 2.4rem 0.25rem 1rem;
+}
+
+.folder-variant {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  min-width: 0;
+  opacity: 0.72;
+  transition:
+    opacity 280ms ease,
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-variant--graphite {
+  transform: translate3d(0, 1.8rem, 0);
+}
+
+.folder-variant--amber {
+  transform: translate3d(0, -1.1rem, 0);
+}
+
+.folder-variant--pearl {
+  transform: translate3d(0, 1rem, 0);
+}
+
+.folder-variant:is(:hover, :focus-within),
+.folder-variant.is-selected {
+  opacity: 1;
+}
+
+.folder-variant.is-selected {
+  transform: translate3d(0, -1.45rem, 0);
+}
+
+.folder-variant__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgb(241 240 234 / 48%);
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 240ms ease;
+}
+
+.folder-variant__name b {
+  color: #dca250;
+  font: inherit;
+}
+
+.folder-variant.is-selected .folder-variant__name,
+.folder-variant:focus-within .folder-variant__name {
+  color: #f1f0ea;
+}
+
+.folder-gallery .folder {
+  --folder-width: clamp(12.25rem, 14.6vw, 17.5rem);
 }
 
 .preview-identity {
@@ -418,13 +481,21 @@ svg {
 @media (max-width: 1180px) {
   .effect-page {
     grid-template-columns: minmax(22rem, 0.78fr) minmax(30rem, 1.22fr);
+    align-items: start;
   }
 
   .theme-panel {
-    position: absolute;
-    right: 2rem;
-    bottom: 2rem;
-    width: 12rem;
+    position: static;
+    grid-column: 2;
+    width: auto;
+  }
+
+  .theme-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .folder-gallery .folder {
+    --folder-width: clamp(11rem, 18vw, 14rem);
   }
 }
 
@@ -452,11 +523,25 @@ svg {
   }
 
   .preview-stage__canvas {
-    min-height: 25rem;
+    min-height: auto;
   }
 
-  .preview-stage__canvas .folder {
-    --folder-width: min(76vw, 22rem);
+  .folder-gallery {
+    grid-template-columns: 1fr;
+    gap: 2.7rem;
+    padding-block: 2.7rem 1.7rem;
+  }
+
+  .folder-gallery .folder {
+    --folder-width: min(76vw, 21rem);
+  }
+
+  .folder-variant,
+  .folder-variant--graphite,
+  .folder-variant--amber,
+  .folder-variant--pearl,
+  .folder-variant.is-selected {
+    transform: none;
   }
 
   .source-panel {
@@ -482,11 +567,11 @@ svg {
   }
 
   .preview-stage {
-    min-height: 27rem;
+    min-height: auto;
   }
 
   .preview-stage__canvas {
-    min-height: 21rem;
+    min-height: auto;
   }
 
   .source-panel__heading {
