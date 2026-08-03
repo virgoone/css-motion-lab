@@ -6,21 +6,44 @@ A small, dependency-free collection of tactile CSS motion studies. Each effect i
 
 - **Folder Pocket** — layered documents and a restrained 3D pocket opening, with amber, graphite, and pearl themes.
 
-## Run locally
+## Development
 
 From the project directory:
 
 ```bash
-python3 -m http.server 4173
+npm install
+npm run dev
 ```
 
-Then open `http://127.0.0.1:4173/`.
+Vite will print the local development URL in the terminal.
+
+Create and inspect the production build with:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Cloudflare Pages
+
+Import this GitHub repository into Cloudflare Pages and use:
+
+```text
+Framework preset: Vite
+Build command: npm run build
+Build output directory: dist
+Root directory: /
+```
+
+Node.js is pinned to `22.16.0` through `.node-version`. The project uses relative asset paths and includes both HTML entry points in the Vite build, so the index and `/effects/folder/` detail route work in the production output.
 
 ## Project structure
 
 ```text
 .
 ├── index.html
+├── package.json
+├── vite.config.js
 ├── assets/
 │   └── site.css
 └── effects/

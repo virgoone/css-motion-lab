@@ -1,3 +1,5 @@
+import folderCss from "./folder.css?raw";
+
 const codeOutput = document.querySelector("#code-output");
 const copyButton = document.querySelector("#copy-button");
 const copyStatus = document.querySelector("#copy-status");
@@ -7,7 +9,7 @@ const themeOptions = [...document.querySelectorAll("[data-theme]")];
 
 let activeSnippet = "html";
 let activeTheme = "amber";
-let cssSnippet = "Loading folder.css…";
+const cssSnippet = folderCss.trim();
 let copiedTimer;
 
 const getHtmlSnippet = () => `<button
@@ -140,19 +142,5 @@ themeOptions.forEach((option) => {
 });
 
 copyButton.addEventListener("click", copyActiveCode);
-
-fetch("./folder.css")
-  .then((response) => {
-    if (!response.ok) throw new Error("Unable to load folder.css");
-    return response.text();
-  })
-  .then((css) => {
-    cssSnippet = css.trim();
-    renderCode();
-  })
-  .catch(() => {
-    cssSnippet = "/* Open this project through a local server to load folder.css. */";
-    renderCode();
-  });
 
 renderCode();
