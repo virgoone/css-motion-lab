@@ -1,16 +1,15 @@
 import folderCss from "./folder.css?raw";
+import { getEffect } from "../registry.js";
+import { setupEffectDocs } from "../shared/docs-shell.js";
 
-const codeOutput = document.querySelector("#code-output");
-const copyButton = document.querySelector("#copy-button");
-const copyStatus = document.querySelector("#copy-status");
-const tabs = [...document.querySelectorAll("[data-snippet]")];
+const effect = getEffect("folder");
 const themeOptions = [...document.querySelectorAll("[data-theme]")];
 const previewFolders = [...document.querySelectorAll("[data-preview-theme]")];
+const activeCaption = document.querySelector("[data-active-caption]");
 
-let activeSnippet = "html";
 let activeTheme = "amber";
+let docs;
 const cssSnippet = folderCss.trim();
-let copiedTimer;
 
 const getHtmlSnippet = () => `<button
   class="folder folder--${activeTheme}"
@@ -38,7 +37,7 @@ const getFullPageSnippet = () => `<!doctype html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Folder Pocket</title>
+    <title>${effect.title}</title>
     <style>
 body {
   display: grid;
@@ -59,29 +58,6 @@ ${getHtmlSnippet()
   </body>
 </html>`;
 
-const getActiveCode = () => {
-  if (activeSnippet === "css") return cssSnippet;
-  if (activeSnippet === "full") return getFullPageSnippet();
-  return getHtmlSnippet();
-};
-
-const renderCode = () => {
-  codeOutput.textContent = getActiveCode();
-  copyStatus.textContent = `${activeSnippet.toUpperCase()} ready to copy`;
-};
-
-const selectSnippet = (nextSnippet) => {
-  activeSnippet = nextSnippet;
-
-  tabs.forEach((tab) => {
-    const isActive = tab.dataset.snippet === activeSnippet;
-    tab.classList.toggle("is-active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
-  });
-
-  renderCode();
-};
-
 const selectTheme = (nextTheme) => {
   activeTheme = nextTheme;
 
@@ -95,50 +71,22 @@ const selectTheme = (nextTheme) => {
     const isActive = folder.dataset.previewTheme === activeTheme;
     folder.closest(".folder-variant").classList.toggle("is-selected", isActive);
     folder.setAttribute("aria-pressed", String(isActive));
+    if (isActive) docs?.inspectElement(folder);
   });
 
-  renderCode();
-};
-
-const fallbackCopy = (text) => {
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.opacity = "0";
-  document.body.append(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  textarea.remove();
-};
-
-const copyActiveCode = async () => {
-  const text = getActiveCode();
-
-  try {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-    } else {
-      fallbackCopy(text);
-    }
-
-    window.clearTimeout(copiedTimer);
-    copyButton.classList.add("is-copied");
-    copyButton.querySelector("span").textContent = "Copied";
-    copyStatus.textContent = `${text.split("\n").length} lines copied`;
-
-    copiedTimer = window.setTimeout(() => {
-      copyButton.classList.remove("is-copied");
-      copyButton.querySelector("span").textContent = "Copy code";
-      renderCode();
-    }, 1800);
-  } catch {
-    copyStatus.textContent = "Copy failed. Select the code and copy manually.";
+  if (activeCaption) {
+    activeCaption.textContent = `${activeTheme[0].toUpperCase()}${activeTheme.slice(1)} selected for copied HTML`;
   }
+
+  docs?.refreshCode();
 };
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => selectSnippet(tab.dataset.snippet));
+docs = setupEffectDocs({
+  snippets: {
+    html: getHtmlSnippet,
+    css: cssSnippet,
+    full: getFullPageSnippet
+  }
 });
 
 themeOptions.forEach((option) => {
@@ -149,6 +97,4 @@ previewFolders.forEach((folder) => {
   folder.addEventListener("click", () => selectTheme(folder.dataset.previewTheme));
 });
 
-copyButton.addEventListener("click", copyActiveCode);
-
-renderCode();
+selectTheme(activeTheme);

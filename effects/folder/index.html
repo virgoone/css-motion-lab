@@ -5,208 +5,332 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A copy-ready, dependency-free CSS folder pocket interaction."
+      content="Preview, inspect, and copy a dependency-free CSS folder pocket interaction."
     />
     <title>Folder Pocket — CSS Motion Lab</title>
+    <link rel="stylesheet" href="../shared/docs-shell.css" />
     <link rel="stylesheet" href="./page.css" />
     <link rel="stylesheet" href="./folder.css" />
     <script type="module" src="./app.js"></script>
   </head>
   <body>
-    <header class="effect-header">
-      <a class="back-link" href="../../" aria-label="Back to the effect index">
-        <svg viewBox="0 0 18 18" aria-hidden="true">
-          <path d="M15 9H3m5-5L3 9l5 5" />
-        </svg>
-        <span>Index</span>
-      </a>
+    <a class="skip-link" href="#effect-content">Skip to effect</a>
 
-      <a class="effect-brand" href="../../">CSS Motion Lab</a>
-    </header>
+    <div class="docs-shell">
+      <aside class="docs-nav" aria-label="Effect documentation">
+        <a class="docs-brand" href="../../" aria-label="CSS Motion Lab home">
+          <span class="docs-brand__mark" aria-hidden="true"></span>
+          <span>CSS Motion Lab</span>
+        </a>
 
-    <main class="effect-page">
-      <aside class="source-panel" aria-labelledby="source-title">
-        <div class="source-panel__heading">
-          <div>
-            <p class="source-panel__eyebrow">Source</p>
-            <h1 id="source-title">Copy the effect</h1>
-          </div>
-          <span class="dependency-badge">0 dependencies</span>
+        <a class="docs-nav__back" href="../../">
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M15 9H3m5-5L3 9l5 5" />
+          </svg>
+          <span>All effects</span>
+        </a>
+
+        <p class="docs-nav__section">Components · 01</p>
+        <a class="docs-nav__link is-active" href="./" aria-current="page">
+          <span>Folder Pocket</span>
+          <span>001</span>
+        </a>
+        <div class="docs-nav__future">
+          The registry is ready for the next CSS study. Add one folder, one manifest entry, and ship.
         </div>
 
-        <div class="source-tabs" role="tablist" aria-label="Code formats">
-          <button
-            class="source-tab is-active"
-            id="tab-html"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            aria-controls="source-code"
-            data-snippet="html"
-          >
-            HTML
-          </button>
-          <button
-            class="source-tab"
-            id="tab-css"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="source-code"
-            data-snippet="css"
-          >
-            CSS
-          </button>
-          <button
-            class="source-tab"
-            id="tab-full"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            aria-controls="source-code"
-            data-snippet="full"
-          >
-            Full page
-          </button>
-        </div>
-
-        <pre class="code-window" id="source-code" role="tabpanel" aria-labelledby="tab-html"><code id="code-output">Loading source…</code></pre>
-
-        <div class="source-panel__footer">
-          <p id="copy-status" aria-live="polite">Ready to copy</p>
-          <button class="copy-button" id="copy-button" type="button">
-            <svg class="copy-button__copy" viewBox="0 0 20 20" aria-hidden="true">
-              <rect x="7" y="7" width="9" height="9" rx="2" />
-              <path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
-            </svg>
-            <svg class="copy-button__check" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="m4 10 4 4 8-8" />
-            </svg>
-            <span>Copy code</span>
-          </button>
+        <div class="docs-nav__footer">
+          <span>Pure CSS</span>
+          <a href="https://github.com/virgoone/css-motion-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
       </aside>
 
-      <section class="preview-stage" aria-labelledby="preview-title">
-        <div class="preview-stage__meta">
-          <p>Live preview</p>
-          <span>Hover any color · select for code</span>
-        </div>
-
-        <div class="preview-stage__canvas">
-          <div class="folder-gallery" aria-label="Folder color previews">
-            <div class="folder-variant folder-variant--graphite">
-              <span class="folder-variant__name"><b>02</b> Graphite</span>
-              <button
-                class="folder folder--graphite"
-                type="button"
-                data-preview-theme="graphite"
-                aria-label="Preview and select the Graphite Folder Pocket"
-                aria-pressed="false"
-              >
-                <span class="folder__object" aria-hidden="true">
-                  <span class="folder__back"></span>
-                  <span class="folder__papers">
-                    <span class="paper paper--rear"></span>
-                    <span class="paper paper--left"></span>
-                    <span class="paper paper--right"></span>
-                  </span>
-                  <span class="folder__front">
-                    <span class="folder__label">
-                      <span>Design Folder</span>
-                      <small>45 files</small>
-                    </span>
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            <div class="folder-variant folder-variant--amber is-selected">
-              <span class="folder-variant__name"><b>01</b> Amber</span>
-              <button
-                class="folder folder--amber"
-                type="button"
-                data-preview-theme="amber"
-                aria-label="Preview and select the Amber Folder Pocket"
-                aria-pressed="true"
-              >
-                <span class="folder__object" aria-hidden="true">
-                  <span class="folder__back"></span>
-                  <span class="folder__papers">
-                    <span class="paper paper--rear"></span>
-                    <span class="paper paper--left"></span>
-                    <span class="paper paper--right"></span>
-                  </span>
-                  <span class="folder__front">
-                    <span class="folder__label">
-                      <span>Design Folder</span>
-                      <small>45 files</small>
-                    </span>
-                  </span>
-                </span>
-              </button>
-            </div>
-
-            <div class="folder-variant folder-variant--pearl">
-              <span class="folder-variant__name"><b>03</b> Pearl</span>
-              <button
-                class="folder folder--pearl"
-                type="button"
-                data-preview-theme="pearl"
-                aria-label="Preview and select the Pearl Folder Pocket"
-                aria-pressed="false"
-              >
-                <span class="folder__object" aria-hidden="true">
-                  <span class="folder__back"></span>
-                  <span class="folder__papers">
-                    <span class="paper paper--rear"></span>
-                    <span class="paper paper--left"></span>
-                    <span class="paper paper--right"></span>
-                  </span>
-                  <span class="folder__front">
-                    <span class="folder__label">
-                      <span>Design Folder</span>
-                      <small>45 files</small>
-                    </span>
-                  </span>
-                </span>
-              </button>
+      <main class="docs-main" id="effect-content">
+        <header class="effect-intro">
+          <p class="breadcrumb"><span>Effects /</span> 3D interaction</p>
+          <h1>Folder Pocket</h1>
+          <div class="effect-intro__row">
+            <p class="effect-intro__description">
+              A tactile folder made from layered HTML and CSS. Three materials share the same
+              restrained pocket opening, with no images and no runtime dependency.
+            </p>
+            <div class="effect-meta" aria-label="Effect metadata">
+              <span>HTML + CSS</span>
+              <span>0 dependencies</span>
+              <span>3 themes</span>
             </div>
           </div>
-        </div>
+        </header>
 
-        <div class="preview-identity">
-          <span>01 / 03</span>
-          <span class="preview-identity__slash">//</span>
-          <h2 id="preview-title">Folder Pocket Trio</h2>
-        </div>
-      </section>
+        <section class="effect-workspace" aria-label="Folder Pocket explorer">
+          <div class="workspace-bar">
+            <div class="view-tabs" role="tablist" aria-label="Effect view">
+              <button
+                class="view-tab is-active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-preview"
+                data-view="preview"
+              >
+                Preview
+              </button>
+              <button
+                class="view-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-code"
+                data-view="code"
+              >
+                Code
+              </button>
+              <button
+                class="view-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-docs"
+                data-view="docs"
+              >
+                Docs
+              </button>
+            </div>
 
-      <aside class="theme-panel" aria-labelledby="theme-title">
-        <div>
-          <p class="theme-panel__eyebrow">Material</p>
-          <h2 id="theme-title">Folder color</h2>
-        </div>
+            <button
+              class="inspect-toggle"
+              type="button"
+              aria-pressed="false"
+              data-inspect-toggle
+              data-inspect-only
+            >
+              <span>Inspect</span>
+              <span class="inspect-toggle__switch" aria-hidden="true"></span>
+            </button>
+          </div>
 
-        <div class="theme-options">
-          <button class="theme-option is-active" type="button" data-theme="amber" aria-pressed="true">
-            <span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>
-            <span>Amber</span>
-          </button>
-          <button class="theme-option" type="button" data-theme="graphite" aria-pressed="false">
-            <span class="theme-swatch theme-swatch--graphite" aria-hidden="true"></span>
-            <span>Graphite</span>
-          </button>
-          <button class="theme-option" type="button" data-theme="pearl" aria-pressed="false">
-            <span class="theme-swatch theme-swatch--pearl" aria-hidden="true"></span>
-            <span>Pearl</span>
-          </button>
-        </div>
+          <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
+            <div class="preview-frame" data-inspect-frame>
+              <div class="preview-canvas" data-inspect-scope>
+                <div class="folder-gallery" aria-label="Folder color previews">
+                  <div class="folder-variant folder-variant--graphite">
+                    <span class="folder-variant__name"><b>02</b> Graphite</span>
+                    <button
+                      class="folder folder--graphite"
+                      type="button"
+                      data-preview-theme="graphite"
+                      aria-label="Preview and select the Graphite Folder Pocket"
+                      aria-pressed="false"
+                    >
+                      <span class="folder__object" aria-hidden="true">
+                        <span class="folder__back"></span>
+                        <span class="folder__papers">
+                          <span class="paper paper--rear"></span>
+                          <span class="paper paper--left"></span>
+                          <span class="paper paper--right"></span>
+                        </span>
+                        <span class="folder__front">
+                          <span class="folder__label">
+                            <span>Design Folder</span>
+                            <small>45 files</small>
+                          </span>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
 
-        <p class="theme-panel__note">
-          All three remain visible. Select a color to update the copy-ready HTML.
-        </p>
+                  <div class="folder-variant folder-variant--amber is-selected">
+                    <span class="folder-variant__name"><b>01</b> Amber</span>
+                    <button
+                      class="folder folder--amber"
+                      type="button"
+                      data-preview-theme="amber"
+                      aria-label="Preview and select the Amber Folder Pocket"
+                      aria-pressed="true"
+                    >
+                      <span class="folder__object" aria-hidden="true">
+                        <span class="folder__back"></span>
+                        <span class="folder__papers">
+                          <span class="paper paper--rear"></span>
+                          <span class="paper paper--left"></span>
+                          <span class="paper paper--right"></span>
+                        </span>
+                        <span class="folder__front">
+                          <span class="folder__label">
+                            <span>Design Folder</span>
+                            <small>45 files</small>
+                          </span>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="folder-variant folder-variant--pearl">
+                    <span class="folder-variant__name"><b>03</b> Pearl</span>
+                    <button
+                      class="folder folder--pearl"
+                      type="button"
+                      data-preview-theme="pearl"
+                      aria-label="Preview and select the Pearl Folder Pocket"
+                      aria-pressed="false"
+                    >
+                      <span class="folder__object" aria-hidden="true">
+                        <span class="folder__back"></span>
+                        <span class="folder__papers">
+                          <span class="paper paper--rear"></span>
+                          <span class="paper paper--left"></span>
+                          <span class="paper paper--right"></span>
+                        </span>
+                        <span class="folder__front">
+                          <span class="folder__label">
+                            <span>Design Folder</span>
+                            <small>45 files</small>
+                          </span>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspect-overlay" data-inspect-overlay hidden aria-hidden="true">
+                <div class="inspect-ruler inspect-ruler--x" data-ruler-x></div>
+                <div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
+                <div class="inspect-box" data-inspect-box></div>
+                <div class="inspect-tooltip" data-inspect-tooltip>
+                  <strong>button.folder</strong>
+                  <span>block · 320 × 227px</span>
+                </div>
+              </div>
+            </div>
+
+            <footer class="preview-footer">
+              <span><strong>Live</strong> · Hover any folder to open the pocket</span>
+              <span data-active-caption>Amber selected for copied HTML</span>
+            </footer>
+          </div>
+
+          <div class="code-panel" id="panel-code" role="tabpanel" data-panel="code" hidden>
+            <div class="code-toolbar">
+              <div class="snippet-tabs" role="tablist" aria-label="Code format">
+                <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-snippet="html">HTML</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="css">CSS</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="full">Full page</button>
+              </div>
+              <button class="copy-action" type="button" data-copy-code>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="7" y="7" width="9" height="9" rx="2" />
+                  <path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
+                </svg>
+                <span data-copy-label>Copy code</span>
+              </button>
+            </div>
+            <pre class="code-window"><code data-code-output>Loading source…</code></pre>
+            <div class="code-toolbar code-toolbar--footer">
+              <p class="code-status" data-copy-status aria-live="polite">HTML · ready to copy</p>
+            </div>
+          </div>
+
+          <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
+            <p class="docs-panel__lead">
+              Folder Pocket is a semantic button with three visual layers: a back shell, a document
+              stack, and a front pocket. Interaction is driven entirely by hover, focus, and active
+              selectors.
+            </p>
+
+            <section class="docs-section" aria-labelledby="install-title">
+              <p class="eyebrow">01 / Setup</p>
+              <h2 id="install-title">Installation</h2>
+              <p>Copy the component stylesheet into your project and load it on the page.</p>
+              <div class="install-block">
+                <code>&lt;link rel="stylesheet" href="/folder.css" /&gt;</code>
+                <button
+                  class="inline-copy"
+                  type="button"
+                  data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/folder.css&quot; /&gt;"
+                  data-copy-label="Copy import"
+                >
+                  Copy import
+                </button>
+              </div>
+            </section>
+
+            <section class="docs-section" aria-labelledby="usage-title">
+              <p class="eyebrow">02 / Anatomy</p>
+              <h2 id="usage-title">Usage</h2>
+              <p>The class structure is deliberate. Preserve these layers, then customize the labels and theme variables.</p>
+              <ol class="usage-steps">
+                <li>Use a button so keyboard users receive the same focused opening state.</li>
+                <li>Keep the papers inside <code>.folder__papers</code> to preserve the 3D stacking order.</li>
+                <li>Choose a material class, or override the color variables on your own modifier.</li>
+              </ol>
+            </section>
+
+            <section class="docs-section" aria-labelledby="api-title">
+              <p class="eyebrow">03 / Contract</p>
+              <h2 id="api-title">CSS API</h2>
+              <p>The public surface is small enough to copy and remix without a build-time abstraction.</p>
+              <table class="api-table">
+                <thead>
+                  <tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>--folder-width</code></td><td><code>clamp(14rem, 25vw, 22rem)</code></td><td>Controls the component scale; height follows automatically.</td></tr>
+                  <tr><td><code>.folder--amber</code></td><td>Amber</td><td>Warm orange material and matching focus ring.</td></tr>
+                  <tr><td><code>.folder--graphite</code></td><td>Graphite</td><td>Near-black material with light labels.</td></tr>
+                  <tr><td><code>.folder--pearl</code></td><td>Pearl</td><td>Soft white material with dark labels.</td></tr>
+                  <tr><td><code>:hover / :focus / :active</code></td><td>Enabled</td><td>Shares the same opening motion across pointer and keyboard input.</td></tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="docs-section" aria-labelledby="accessibility-title">
+              <p class="eyebrow">04 / Behavior</p>
+              <h2 id="accessibility-title">Accessibility</h2>
+              <p>
+                The preview uses a native button, exposes the selected material with
+                <code>aria-pressed</code>, includes a visible focus ring, and short-circuits transitions
+                when the user requests reduced motion.
+              </p>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <aside class="properties-rail" aria-label="Effect properties">
+        <section class="rail-card" aria-labelledby="material-title">
+          <p class="rail-card__eyebrow">Material</p>
+          <h2 id="material-title">Copy theme</h2>
+          <div class="theme-options">
+            <button class="theme-option is-active" type="button" data-theme="amber" aria-pressed="true">
+              <span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>
+              <span>Amber</span>
+            </button>
+            <button class="theme-option" type="button" data-theme="graphite" aria-pressed="false">
+              <span class="theme-swatch theme-swatch--graphite" aria-hidden="true"></span>
+              <span>Graphite</span>
+            </button>
+            <button class="theme-option" type="button" data-theme="pearl" aria-pressed="false">
+              <span class="theme-swatch theme-swatch--pearl" aria-hidden="true"></span>
+              <span>Pearl</span>
+            </button>
+          </div>
+          <p class="rail-note">All three stay visible. This selection only changes the copy-ready markup.</p>
+        </section>
+
+        <section class="rail-card" aria-labelledby="inspector-title">
+          <p class="rail-card__eyebrow">Inspector</p>
+          <h2 id="inspector-title">Live metrics</h2>
+          <dl class="metric-list">
+            <div><dt>Selector</dt><dd data-metric="selector">button.folder.folder--amber</dd></div>
+            <div><dt>Size</dt><dd data-metric="size">—</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">block</dd></div>
+            <div><dt>Padding</dt><dd data-metric="padding">0px</dd></div>
+            <div><dt>Margin</dt><dd data-metric="margin">0px</dd></div>
+          </dl>
+          <p class="rail-note">Turn on Inspect, then move across the preview to measure individual layers.</p>
+        </section>
       </aside>
-    </main>
+    </div>
   </body>
 </html>

@@ -1,6 +1,6 @@
 # CSS Motion Lab
 
-A small, dependency-free collection of tactile CSS motion studies. Each effect includes a live preview and copy-ready source.
+A small, dependency-free collection of tactile CSS motion studies. Each effect includes a live preview, an element inspector, documentation, and copy-ready source.
 
 ## Included effects
 
@@ -35,7 +35,7 @@ Build output directory: dist
 Root directory: /
 ```
 
-Node.js is pinned to `22.16.0` through `.node-version`. The project uses relative asset paths and includes both HTML entry points in the Vite build, so the index and `/effects/folder/` detail route work in the production output.
+Node.js is pinned to `22.16.0` through `.node-version`. The project uses relative asset paths. Vite automatically discovers every `effects/*/index.html` entry, so new effect routes are included in production without manually editing the build config.
 
 ## Project structure
 
@@ -45,8 +45,13 @@ Node.js is pinned to `22.16.0` through `.node-version`. The project uses relativ
 ├── package.json
 ├── vite.config.js
 ├── assets/
+│   ├── index.js
 │   └── site.css
 └── effects/
+    ├── registry.js
+    ├── shared/
+    │   ├── docs-shell.css
+    │   └── docs-shell.js
     └── folder/
         ├── index.html
         ├── page.css
@@ -54,9 +59,17 @@ Node.js is pinned to `22.16.0` through `.node-version`. The project uses relativ
         └── app.js
 ```
 
-The component itself lives in `effects/folder/folder.css`. The detail page uses a small amount of vanilla JavaScript for theme switching and clipboard access; the folder interaction remains pure CSS.
+The component itself lives in `effects/folder/folder.css`. Shared documentation behavior lives in `effects/shared/`: Preview / Code / Docs tabs, clipboard access, pixel rulers, and live element measurements. The folder interaction remains pure CSS.
+
+## Adding an effect
+
+1. Add an item to `effects/registry.js`.
+2. Create `effects/<slug>/index.html`, the effect stylesheet, a page stylesheet, and an ESM controller.
+3. Import `setupEffectDocs` from `effects/shared/docs-shell.js` to reuse tabs, copying, and Inspect.
+4. Run `npm run build`; Vite discovers the new HTML entry automatically.
 
 ## References
 
 - Folder animation study inspired by [Aditya Sur / Inspora](https://x.com/insporadesign/status/2084184561123017088).
 - Source-panel interaction informed by [LDRS / UI Ball](https://uiball.com/ldrs/).
+- Documentation and inspector information architecture informed by [Fluid Functionalism](https://www.fluidfunctionalism.com/docs/table), which is available under the MIT license.
