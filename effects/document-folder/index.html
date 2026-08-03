@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <meta
+      name="description"
+      content="Preview, inspect, and copy a pure CSS document-folder interaction."
+    />
+    <title>Document Folder — CSS Motion Lab</title>
+    <link rel="stylesheet" href="../shared/docs-shell.css" />
+    <link rel="stylesheet" href="./page.css" />
+    <link rel="stylesheet" href="./document-folder.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#effect-content">Skip to effect</a>
+
+    <div class="docs-shell">
+      <aside class="docs-nav" aria-label="Effect documentation">
+        <a class="docs-brand" href="../../" aria-label="CSS Motion Lab home">
+          <span class="docs-brand__mark" aria-hidden="true"></span>
+          <span>CSS Motion Lab</span>
+        </a>
+
+        <a class="docs-nav__back" href="../../">
+          <svg viewBox="0 0 18 18" aria-hidden="true">
+            <path d="M15 9H3m5-5L3 9l5 5" />
+          </svg>
+          <span>All effects</span>
+        </a>
+
+        <p class="docs-nav__section">Components · 03</p>
+        <a class="docs-nav__link" href="../folder/">
+          <span>Folder Pocket</span>
+          <span>001</span>
+        </a>
+        <a class="docs-nav__link" href="../value-cards/">
+          <span>Value Card Fan</span>
+          <span>002</span>
+        </a>
+        <a class="docs-nav__link is-active" href="./" aria-current="page">
+          <span>Document Folder</span>
+          <span>003</span>
+        </a>
+        <div class="docs-nav__future">
+          A three-stage hover state machine: open the cover, lift the collection, then fan the rear document.
+        </div>
+
+        <div class="docs-nav__footer">
+          <span>Pure CSS</span>
+          <a href="https://github.com/virgoone/css-motion-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+
+      <main class="docs-main" id="effect-content">
+        <header class="effect-intro">
+          <p class="breadcrumb"><span>Effects /</span> 3D collection</p>
+          <h1>Document Folder</h1>
+          <div class="effect-intro__row">
+            <p class="effect-intro__description">
+              A compact archive opens into three panels, raises a two-piece postage collection,
+              and lets the rear stamp fan outward. The complete state machine is driven by CSS.
+            </p>
+            <div class="effect-meta" aria-label="Effect metadata">
+              <span>HTML + CSS</span>
+              <span>0 dependencies</span>
+              <span>821 frames studied</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="effect-workspace" aria-label="Document Folder explorer">
+          <div class="workspace-bar">
+            <div class="view-tabs" role="tablist" aria-label="Effect view">
+              <button class="view-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-preview" data-view="preview">Preview</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-code" data-view="code">Code</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-docs" data-view="docs">Docs</button>
+            </div>
+
+            <button class="inspect-toggle" type="button" aria-pressed="false" data-inspect-toggle data-inspect-only>
+              <span>Inspect</span>
+              <span class="inspect-toggle__switch" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
+            <div class="preview-frame document-folder-preview-frame" data-inspect-frame>
+              <div class="preview-canvas" data-inspect-scope>
+                <div
+                  class="document-folder"
+                  tabindex="0"
+                  role="group"
+                  aria-label="Interactive postage document folder"
+                  data-inspect-default
+                >
+                  <span class="document-folder__scene">
+                    <span class="document-folder__back" aria-hidden="true">
+                      <span class="document-folder__pocket"></span>
+                    </span>
+
+                    <span class="postage-stack">
+                      <button class="postage postage--rear" type="button" aria-label="Reveal Island Mail stamp">
+                        <span class="postage__field">
+                          <span class="postage__island-title">ISLAND<br />MAIL</span>
+                          <span class="postage__island-mark"></span>
+                        </span>
+                      </button>
+
+                      <button class="postage postage--front" type="button" aria-label="Lift Quiet Hours stamp">
+                        <span class="postage__field">
+                          <span class="postage__vertical">静かな時間</span>
+                          <span class="postage__bird"></span>
+                          <span class="postage__country">NIPPON</span>
+                          <span class="postage__value">63</span>
+                        </span>
+                      </button>
+                    </span>
+
+                    <span class="document-folder__panel document-folder__panel--left" aria-hidden="true">
+                      <span class="document-folder__mark"><i></i></span>
+                      <span class="document-folder__meta">
+                        <span>Stamp collection</span>
+                        <small>02 total</small>
+                      </span>
+                    </span>
+
+                    <span class="document-folder__panel document-folder__panel--right" aria-hidden="true">
+                      <span class="document-folder__index">ARCHIVE / 01</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="inspect-overlay" data-inspect-overlay hidden aria-hidden="true">
+                <div class="inspect-ruler inspect-ruler--x" data-ruler-x></div>
+                <div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
+                <div class="inspect-box" data-inspect-box></div>
+                <div class="inspect-tooltip" data-inspect-tooltip>
+                  <strong>div.document-folder</strong>
+                  <span>grid · 605 × 419px</span>
+                </div>
+              </div>
+            </div>
+
+            <footer class="preview-footer">
+              <span><strong>Live</strong> · Enter the folder, then move onto either stamp</span>
+              <span>Hover / focus · no JavaScript</span>
+            </footer>
+          </div>
+
+          <div class="code-panel" id="panel-code" role="tabpanel" data-panel="code" hidden>
+            <div class="code-toolbar">
+              <div class="snippet-tabs" role="tablist" aria-label="Code format">
+                <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-snippet="html">HTML</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="css">CSS</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="full">Full page</button>
+              </div>
+              <button class="copy-action" type="button" data-copy-code>
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <rect x="7" y="7" width="9" height="9" rx="2" />
+                  <path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
+                </svg>
+                <span data-copy-label>Copy code</span>
+              </button>
+            </div>
+            <pre class="code-window"><code data-code-output>Loading source…</code></pre>
+            <div class="code-toolbar code-toolbar--footer">
+              <p class="code-status" data-copy-status aria-live="polite">HTML · ready to copy</p>
+            </div>
+          </div>
+
+          <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
+            <p class="docs-panel__lead">
+              The 27.4-second reference recording contains repeated demonstrations of the same
+              four phases. Frame inspection shows that pointer position—not a click or carousel
+              state—controls the entire interaction.
+            </p>
+
+            <section class="docs-section" aria-labelledby="install-title">
+              <p class="eyebrow">01 / Setup</p>
+              <h2 id="install-title">Installation</h2>
+              <p>Copy the component stylesheet and preserve the panel and postage-stack hierarchy.</p>
+              <div class="install-block">
+                <code>&lt;link rel="stylesheet" href="/document-folder.css" /&gt;</code>
+                <button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/document-folder.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button>
+              </div>
+            </section>
+
+            <section class="docs-section" aria-labelledby="anatomy-title">
+              <p class="eyebrow">02 / Anatomy</p>
+              <h2 id="anatomy-title">Three nested hover zones</h2>
+              <ol class="usage-steps">
+                <li><code>.document-folder:hover</code> separates the two front panels to reveal the pocket.</li>
+                <li><code>:has(.postage:hover)</code> raises the collection and recloses the panels behind it.</li>
+                <li>Hovering the exposed rear stamp translates and rotates only that document.</li>
+              </ol>
+            </section>
+
+            <section class="docs-section" aria-labelledby="frames-title">
+              <p class="eyebrow">03 / Frame analysis</p>
+              <h2 id="frames-title">Observed motion phases</h2>
+              <p>The source was sampled at 100ms during transitions and at 500ms across the full capture.</p>
+              <div class="frame-grid">
+                <div><span>0—760ms</span><strong>Unfold</strong><p>Side panels translate outward and rotate 18° around their inner hinges.</p></div>
+                <div><span>0—880ms</span><strong>Raise</strong><p>The two stamps scale and move upward as one preserved stack.</p></div>
+                <div><span>220—980ms</span><strong>Reclose</strong><p>When the pointer reaches a stamp, the panels close behind the enlarged collection.</p></div>
+                <div><span>0—620ms</span><strong>Fan</strong><p>The rear stamp travels right and rotates to reveal its full printed face.</p></div>
+              </div>
+            </section>
+
+            <section class="docs-section" aria-labelledby="api-title">
+              <p class="eyebrow">04 / Contract</p>
+              <h2 id="api-title">CSS API</h2>
+              <table class="api-table">
+                <thead><tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr></thead>
+                <tbody>
+                  <tr><td><code>--document-folder-width</code></td><td><code>17rem—22rem</code></td><td>Scales the complete object and its postage collection.</td></tr>
+                  <tr><td><code>--document-folder-green</code></td><td><code>#063f35</code></td><td>Primary archive material color.</td></tr>
+                  <tr><td><code>--document-folder-ease</code></td><td><code>cubic-bezier(0.16, 1, 0.3, 1)</code></td><td>Shared physical settling curve.</td></tr>
+                  <tr><td><code>.postage--rear</code></td><td>Second layer</td><td>Receives the independent fan transform.</td></tr>
+                </tbody>
+              </table>
+            </section>
+
+            <section class="docs-section" aria-labelledby="accessibility-title">
+              <p class="eyebrow">05 / Behavior</p>
+              <h2 id="accessibility-title">Accessibility</h2>
+              <p>The root can be focused to open the folder, each stamp is a native button, focus-visible mirrors hover, and reduced-motion users receive the same states without long transitions.</p>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <aside class="properties-rail" aria-label="Effect properties">
+        <section class="rail-card" aria-labelledby="motion-title">
+          <p class="rail-card__eyebrow">Frame map</p>
+          <h2 id="motion-title">Observed motion</h2>
+          <ol class="motion-timeline">
+            <li><time>000—760</time><span>Cover panels separate around the center pocket.</span></li>
+            <li><time>000—880</time><span>Collection rises as a single transform layer.</span></li>
+            <li><time>220—980</time><span>Panels reclose behind the selected stamp.</span></li>
+            <li><time>000—620</time><span>Rear postage fans right on its own hinge.</span></li>
+          </ol>
+          <p class="rail-note">Analysis source: 821 frames at 30fps, 1240 × 1080.</p>
+        </section>
+
+        <section class="rail-card" aria-labelledby="inspector-title">
+          <p class="rail-card__eyebrow">Inspector</p>
+          <h2 id="inspector-title">Live metrics</h2>
+          <dl class="metric-list">
+            <div><dt>Selector</dt><dd data-metric="selector">div.document-folder</dd></div>
+            <div><dt>Size</dt><dd data-metric="size">—</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">grid</dd></div>
+            <div><dt>Padding</dt><dd data-metric="padding">—</dd></div>
+            <div><dt>Margin</dt><dd data-metric="margin">—</dd></div>
+          </dl>
+          <p class="rail-note">Inspect freezes the open state so the hinge panels, pocket, stack, and stamp artwork can be measured independently.</p>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

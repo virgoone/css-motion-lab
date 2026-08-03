@@ -20,6 +20,17 @@ export const effects = [
     href: "./effects/value-cards/",
     themes: ["Pastel"],
     status: "Ready"
+  },
+  {
+    id: "003",
+    slug: "document-folder",
+    title: "Document Folder",
+    shortTitle: "Document Folder",
+    category: "3D collection",
+    description: "A three-stage archive that opens, raises its documents, and fans the rear stamp.",
+    href: "./effects/document-folder/",
+    themes: ["Archive Green"],
+    status: "Ready"
   }
 ];
 

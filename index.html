@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
     <meta
       name="description"
       content="A small, dependency-free collection of tactile CSS motion studies."
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="./assets/site.css" />
     <link rel="stylesheet" href="./effects/folder/folder.css" />
     <link rel="stylesheet" href="./effects/value-cards/value-cards.css" />
+    <link rel="stylesheet" href="./effects/document-folder/document-folder.css" />
     <script type="module" src="./assets/index.js"></script>
   </head>
   <body>
@@ -40,13 +42,13 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <p class="eyebrow">Pure CSS / Motion studies 001—002</p>
+          <p class="eyebrow">Pure CSS / Motion studies 001—003</p>
           <h1 id="hero-title">Small motion,<br />copied cleanly.</h1>
           <p class="hero__description">
             A growing index of tactile interface effects. Every study includes a live preview and
             copy-ready HTML and CSS.
           </p>
-          <a class="primary-link" href="./effects/value-cards/">
+          <a class="primary-link" href="./effects/document-folder/">
             Open the latest study
             <svg viewBox="0 0 18 18" aria-hidden="true">
               <path d="m6 3 6 6-6 6" />
@@ -66,7 +68,7 @@
             <p class="eyebrow">The index</p>
             <h2 id="effects-title">Effects</h2>
           </div>
-          <p data-effect-count>2 studies available</p>
+          <p data-effect-count>3 studies available</p>
         </header>
 
         <a class="effect-card" href="./effects/folder/" aria-label="Open Folder Pocket effect">
@@ -167,8 +169,62 @@
           </div>
         </a>
 
+        <a class="effect-card effect-card--document" href="./effects/document-folder/" aria-label="Open Document Folder effect">
+          <div class="effect-card__preview">
+            <span class="effect-card__number">003</span>
+            <span class="document-folder" aria-hidden="true">
+              <span class="document-folder__scene">
+                <span class="document-folder__back">
+                  <span class="document-folder__pocket"></span>
+                </span>
+
+                <span class="postage-stack">
+                  <span class="postage postage--rear">
+                    <span class="postage__field">
+                      <span class="postage__island-title">ISLAND<br />MAIL</span>
+                      <span class="postage__island-mark"></span>
+                    </span>
+                  </span>
+                  <span class="postage postage--front">
+                    <span class="postage__field">
+                      <span class="postage__vertical">静かな時間</span>
+                      <span class="postage__bird"></span>
+                      <span class="postage__country">NIPPON</span>
+                      <span class="postage__value">63</span>
+                    </span>
+                  </span>
+                </span>
+
+                <span class="document-folder__panel document-folder__panel--left">
+                  <span class="document-folder__mark"><i></i></span>
+                  <span class="document-folder__meta">
+                    <span>Stamp collection</span>
+                    <small>02 total</small>
+                  </span>
+                </span>
+                <span class="document-folder__panel document-folder__panel--right">
+                  <span class="document-folder__index">ARCHIVE / 01</span>
+                </span>
+              </span>
+            </span>
+            <span class="effect-card__hint">Enter, then follow the stamps</span>
+          </div>
+
+          <div class="effect-card__caption">
+            <div>
+              <p>Document Folder</p>
+              <span>Open, extract, and fan a compact document collection.</span>
+            </div>
+            <span class="effect-card__arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20">
+                <path d="M4 10h12m-5-5 5 5-5 5" />
+              </svg>
+            </span>
+          </div>
+        </a>
+
         <div class="coming-next" aria-label="Future effect slots">
-          <span>003—006</span>
+          <span>004—006</span>
           <p>Reserved for the next motion studies.</p>
           <span>In progress</span>
         </div>

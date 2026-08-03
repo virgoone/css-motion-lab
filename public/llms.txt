@@ -1,0 +1,14 @@
+# CSS Motion Lab
+
+> A dependency-free collection of copyable HTML and CSS motion studies.
+
+## Effects
+
+- Folder Pocket: layered documents and a restrained 3D pocket opening.
+- Value Card Fan: overlapping cards that part around the active card.
+- Document Folder: a hover-driven archive that opens, raises its collection, and fans the rear document.
+
+## Source
+
+- [GitHub repository](https://github.com/virgoone/css-motion-lab)
+- [Live website](https://motion-css.douni.one/)

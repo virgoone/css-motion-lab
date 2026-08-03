@@ -271,6 +271,26 @@ svg {
   color: rgb(32 33 31 / 47%);
 }
 
+.effect-card--document .effect-card__preview {
+  background:
+    radial-gradient(circle at 50% 44%, rgb(224 231 219 / 60%), transparent 30rem),
+    #f7f7f4;
+}
+
+.effect-card--document .effect-card__preview::before {
+  border-color: rgb(32 33 31 / 8%);
+}
+
+.effect-card--document .document-folder {
+  --document-folder-width: clamp(16rem, 31vw, 23rem);
+  flex: 0 0 auto;
+}
+
+.effect-card--document .effect-card__number,
+.effect-card--document .effect-card__hint {
+  color: rgb(32 33 31 / 47%);
+}
+
 .effect-card__number,
 .effect-card__hint {
   position: absolute;
@@ -411,6 +431,10 @@ svg {
     --value-card-width: min(29vw, 7.8rem);
     --value-card-overlap: max(-11vw, -2.7rem);
     --value-card-spread: 0.7rem;
+  }
+
+  .effect-card--document .document-folder {
+    --document-folder-width: min(54vw, 17rem);
   }
 
   .effect-card__number {

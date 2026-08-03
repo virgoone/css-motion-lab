@@ -1,0 +1,118 @@
+.document-folder-preview-frame {
+  background:
+    radial-gradient(circle at 50% 44%, rgb(226 231 219 / 52%), transparent 30rem),
+    #f7f7f4;
+}
+
+.document-folder-preview-frame .preview-canvas {
+  min-height: 42rem;
+  padding: 3.4rem 1.5rem 2.4rem;
+}
+
+.document-folder-preview-frame .document-folder {
+  flex: 0 0 auto;
+}
+
+.document-folder-preview-frame.is-inspecting,
+.document-folder-preview-frame.is-inspecting .postage {
+  cursor: crosshair;
+}
+
+.document-folder-preview-frame.is-inspecting .document-folder__panel--left {
+  transform: translate3d(-66%, 0, 0) rotateY(-18deg) !important;
+}
+
+.document-folder-preview-frame.is-inspecting .document-folder__panel--right {
+  transform: translate3d(66%, 0, 0) rotateY(18deg) !important;
+}
+
+.document-folder-preview-frame.is-inspecting .postage-stack {
+  z-index: 7;
+  opacity: 1 !important;
+  pointer-events: auto;
+  transform: translate3d(-50%, -55%, 0) scale(0.7) !important;
+}
+
+.document-folder-preview-frame.is-inspecting .document-folder__panel,
+.document-folder-preview-frame.is-inspecting .postage-stack,
+.document-folder-preview-frame.is-inspecting .postage {
+  transition: none !important;
+}
+
+.motion-timeline {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.motion-timeline li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgb(255 255 255 / 7%);
+  color: rgb(241 240 234 / 43%);
+  font-size: 0.62rem;
+  line-height: 1.55;
+}
+
+.motion-timeline time {
+  color: #dca250;
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.5rem;
+}
+
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 7%);
+}
+
+.frame-grid div {
+  min-height: 7.6rem;
+  padding: 0.85rem;
+  background: rgb(255 255 255 / 2%);
+}
+
+.frame-grid span {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: #dca250;
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: 0.5rem;
+}
+
+.frame-grid strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.frame-grid p {
+  margin: 0;
+  color: rgb(241 240 234 / 38%);
+  font-size: 0.59rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 780px) {
+  .document-folder-preview-frame .preview-canvas {
+    min-height: 35rem;
+    padding-inline: 0.6rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .frame-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
