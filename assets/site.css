@@ -362,6 +362,25 @@ svg {
   color: rgb(32 33 31 / 47%);
 }
 
+.effect-card--progress .effect-card__preview {
+  background:
+    radial-gradient(circle at 50% 47%, rgb(221 225 227 / 45%), transparent 30rem),
+    #f7f7f5;
+}
+
+.effect-card--progress .effect-card__preview::before {
+  border-color: rgb(32 33 31 / 8%);
+}
+
+.effect-card--progress .progress-pills {
+  --progress-pill-width: clamp(20rem, 43vw, 32rem);
+}
+
+.effect-card--progress .effect-card__number,
+.effect-card--progress .effect-card__hint {
+  color: rgb(32 33 31 / 47%);
+}
+
 .effect-card__number,
 .effect-card__hint {
   position: absolute;
@@ -510,6 +529,10 @@ svg {
 
   .effect-card--theme .theme-switcher-demo {
     --theme-switcher-width: min(76vw, 22rem);
+  }
+
+  .effect-card--progress .progress-pills {
+    --progress-pill-width: min(78vw, 23rem);
   }
 
   .effect-card__number {

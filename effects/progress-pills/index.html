@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <meta
+      name="description"
+      content="Preview, inspect, and copy three animated CSS task progress pills."
+    />
+    <title>Task Progress Pills — CSS Motion Lab</title>
+    <link rel="stylesheet" href="../shared/docs-shell.css" />
+    <link rel="stylesheet" href="./page.css" />
+    <link rel="stylesheet" href="./progress-pills.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#effect-content">Skip to effect</a>
+
+    <div class="docs-shell">
+      <aside class="docs-nav" aria-label="Effect documentation">
+        <a class="docs-brand" href="../../" aria-label="CSS Motion Lab home">
+          <span class="docs-brand__mark" aria-hidden="true"></span>
+          <span>CSS Motion Lab</span>
+        </a>
+
+        <a class="docs-nav__back" href="../../">
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M15 9H3m5-5L3 9l5 5" /></svg>
+          <span>All effects</span>
+        </a>
+
+        <p class="docs-nav__section">Components · 05</p>
+        <a class="docs-nav__link" href="../folder/"><span>Folder Pocket</span><span>001</span></a>
+        <a class="docs-nav__link" href="../value-cards/"><span>Value Card Fan</span><span>002</span></a>
+        <a class="docs-nav__link" href="../document-folder/"><span>Document Folder</span><span>003</span></a>
+        <a class="docs-nav__link" href="../theme-switcher/"><span>Theme Switcher</span><span>004</span></a>
+        <a class="docs-nav__link is-active" href="./" aria-current="page"><span>Progress Pills</span><span>005</span></a>
+        <div class="docs-nav__future">
+          Three independent progress trajectories share one transform-only fill system and three fluid frontiers.
+        </div>
+
+        <div class="docs-nav__footer">
+          <span>Pure CSS</span>
+          <a href="https://github.com/virgoone/css-motion-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+
+      <main class="docs-main" id="effect-content">
+        <header class="effect-intro">
+          <p class="breadcrumb"><span>Effects /</span> Data status</p>
+          <h1>Task Progress Pills</h1>
+          <div class="effect-intro__row">
+            <p class="effect-intro__description">
+              Three task capsules advance and retreat on separate timelines. A colored field,
+              deforming frontier, and numeric counter all resolve from the same CSS state.
+            </p>
+            <div class="effect-meta" aria-label="Effect metadata">
+              <span>HTML + CSS</span><span>0 dependencies</span><span>538 frames studied</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="effect-workspace" aria-label="Task Progress Pills explorer">
+          <div class="workspace-bar">
+            <div class="view-tabs" role="tablist" aria-label="Effect view">
+              <button class="view-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-preview" data-view="preview">Preview</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-code" data-view="code">Code</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-docs" data-view="docs">Docs</button>
+            </div>
+            <button class="inspect-toggle" type="button" aria-pressed="false" data-inspect-toggle data-inspect-only>
+              <span>Inspect</span><span class="inspect-toggle__switch" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
+            <div class="preview-frame progress-pills-preview-frame" data-inspect-frame>
+              <div class="preview-canvas" data-inspect-scope>
+                <div class="progress-pills" aria-label="Animated task progress" data-inspect-default>
+                  <div class="progress-pill progress-pill--model" role="progressbar" aria-label="Model training, animated progress">
+                    <span class="progress-pill__fill" aria-hidden="true"></span>
+                    <span class="progress-pill__edge" aria-hidden="true">
+                      <svg viewBox="0 0 96 180" preserveAspectRatio="none">
+                        <path class="progress-pill__edge-fill" d="M0 0H56C52 15 71 25 56 39C40 52 72 61 54 75C38 88 72 97 54 111C37 125 70 135 52 149C43 160 57 170 54 180H0Z" />
+                        <path class="progress-pill__edge-glow" d="M56 0C52 15 71 25 56 39C40 52 72 61 54 75C38 88 72 97 54 111C37 125 70 135 52 149C43 160 57 170 54 180" />
+                        <path class="progress-pill__edge-line" d="M56 0C52 15 71 25 56 39C40 52 72 61 54 75C38 88 72 97 54 111C37 125 70 135 52 149C43 160 57 170 54 180" />
+                      </svg>
+                    </span>
+                    <span class="progress-pill__copy"><strong>MODEL TRAINING*</strong><span>SHA 4.5 + 100 2026 TKN</span></span>
+                    <span class="progress-pill__value" aria-hidden="true"></span>
+                  </div>
+
+                  <div class="progress-pill progress-pill--agent" role="progressbar" aria-label="Agent migration, animated progress">
+                    <span class="progress-pill__fill" aria-hidden="true"></span>
+                    <span class="progress-pill__edge" aria-hidden="true">
+                      <svg viewBox="0 0 96 180" preserveAspectRatio="none">
+                        <path class="progress-pill__edge-fill" d="M0 0H58C51 18 59 31 49 45C40 57 69 69 51 82C39 94 67 108 50 121C39 134 65 146 51 158C45 167 58 176 56 180H0Z" />
+                        <path class="progress-pill__edge-glow" d="M58 0C51 18 59 31 49 45C40 57 69 69 51 82C39 94 67 108 50 121C39 134 65 146 51 158C45 167 58 176 56 180" />
+                        <path class="progress-pill__edge-line" d="M58 0C51 18 59 31 49 45C40 57 69 69 51 82C39 94 67 108 50 121C39 134 65 146 51 158C45 167 58 176 56 180" />
+                      </svg>
+                    </span>
+                    <span class="progress-pill__copy"><strong>AGENT MIGRATION*</strong><span>TRANSFERRING PROTOCOL</span></span>
+                    <span class="progress-pill__value" aria-hidden="true"></span>
+                  </div>
+
+                  <div class="progress-pill progress-pill--visual" role="progressbar" aria-label="Visual training, animated progress">
+                    <span class="progress-pill__fill" aria-hidden="true"></span>
+                    <span class="progress-pill__edge" aria-hidden="true">
+                      <svg viewBox="0 0 96 180" preserveAspectRatio="none">
+                        <path class="progress-pill__edge-fill" d="M0 0H60C55 17 66 27 55 41C44 54 70 65 55 79C42 91 69 103 54 117C42 129 66 143 53 155C45 166 61 174 58 180H0Z" />
+                        <path class="progress-pill__edge-glow" d="M60 0C55 17 66 27 55 41C44 54 70 65 55 79C42 91 69 103 54 117C42 129 66 143 53 155C45 166 61 174 58 180" />
+                        <path class="progress-pill__edge-line" d="M60 0C55 17 66 27 55 41C44 54 70 65 55 79C42 91 69 103 54 117C42 129 66 143 53 155C45 166 61 174 58 180" />
+                      </svg>
+                    </span>
+                    <span class="progress-pill__copy"><strong>VISUAL TRAINING*</strong><span>GENERATING POWER ++</span></span>
+                    <span class="progress-pill__value" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspect-overlay" data-inspect-overlay hidden aria-hidden="true">
+                <div class="inspect-ruler inspect-ruler--x" data-ruler-x></div><div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
+                <div class="inspect-box" data-inspect-box></div>
+                <div class="inspect-tooltip" data-inspect-tooltip><strong>div.progress-pills</strong><span>grid · live size</span></div>
+              </div>
+            </div>
+            <footer class="preview-footer">
+              <span><strong>Live</strong> · Three independent looping trajectories</span>
+              <span>Transform + typed CSS properties · no JavaScript</span>
+            </footer>
+          </div>
+
+          <div class="code-panel" id="panel-code" role="tabpanel" data-panel="code" hidden>
+            <div class="code-toolbar">
+              <div class="snippet-tabs" role="tablist" aria-label="Code format">
+                <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-snippet="html">HTML</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="css">CSS</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="full">Full page</button>
+              </div>
+              <button class="copy-action" type="button" data-copy-code>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="9" rx="2" /><path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" /></svg>
+                <span data-copy-label>Copy code</span>
+              </button>
+            </div>
+            <pre class="code-window"><code data-code-output>Loading source…</code></pre>
+            <div class="code-toolbar code-toolbar--footer"><p class="code-status" data-copy-status aria-live="polite">HTML · ready to copy</p></div>
+          </div>
+
+          <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
+            <p class="docs-panel__lead">
+              The 9.01-second source contains 538 frames at 60fps. The three values do not move
+              toward completion together: each advances, reverses, and pauses on its own timeline.
+            </p>
+            <section class="docs-section" aria-labelledby="install-title">
+              <p class="eyebrow">01 / Setup</p><h2 id="install-title">Installation</h2>
+              <p>Copy the stylesheet and keep the fill, SVG frontier, copy, and value layers in that order.</p>
+              <div class="install-block"><code>&lt;link rel="stylesheet" href="/progress-pills.css" /&gt;</code><button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/progress-pills.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button></div>
+            </section>
+            <section class="docs-section" aria-labelledby="anatomy-title">
+              <p class="eyebrow">02 / Anatomy</p><h2 id="anatomy-title">One value drives three layers</h2>
+              <ol class="usage-steps">
+                <li><code>--pill-progress</code> moves the colored field and the SVG frontier using transforms.</li>
+                <li><code>--pill-count</code> updates the tabular percentage through a CSS counter.</li>
+                <li>Each frontier uses a different SVG profile and a small vertical breathing cycle.</li>
+              </ol>
+            </section>
+            <section class="docs-section" aria-labelledby="frames-title">
+              <p class="eyebrow">03 / Frame analysis</p><h2 id="frames-title">Observed motion system</h2>
+              <p>Full-sequence samples were taken every 333ms, with 60fps inspection around direction changes.</p>
+              <div class="frame-grid">
+                <div><span>0—9000ms</span><strong>Independent paths</strong><p>Model, agent, and visual values reverse at different moments.</p></div>
+                <div><span>Per frame</span><strong>Shared state</strong><p>Number, fill boundary, and bright edge remain spatially locked.</p></div>
+                <div><span>1500—2100ms</span><strong>Frontier pulse</strong><p>The edge profile subtly stretches while its center continues travelling.</p></div>
+                <div><span>180—420ms</span><strong>Direction change</strong><p>Progress decelerates, pauses briefly, and accelerates into reverse.</p></div>
+              </div>
+            </section>
+            <section class="docs-section" aria-labelledby="api-title">
+              <p class="eyebrow">04 / Contract</p><h2 id="api-title">CSS API</h2>
+              <table class="api-table"><thead><tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr></thead><tbody>
+                <tr><td><code>--progress-pill-width</code></td><td><code>22rem—35rem</code></td><td>Scales the stack, type, frontier, and gaps.</td></tr>
+                <tr><td><code>--pill-progress</code></td><td><code>50%</code></td><td>Typed percentage used by both moving layers.</td></tr>
+                <tr><td><code>--pill-count</code></td><td><code>50</code></td><td>Typed integer rendered by the CSS counter.</td></tr>
+                <tr><td><code>--pill-accent</code></td><td>Per task</td><td>Bright frontier and active field color.</td></tr>
+              </tbody></table>
+            </section>
+            <section class="docs-section" aria-labelledby="accessibility-title">
+              <p class="eyebrow">05 / Behavior</p><h2 id="accessibility-title">Accessibility</h2>
+              <p>Each capsule exposes indeterminate progress semantics while its visual value changes continuously. Reduced-motion users receive the same three states with both timelines paused.</p>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <aside class="properties-rail" aria-label="Effect properties">
+        <section class="rail-card" aria-labelledby="motion-title">
+          <p class="rail-card__eyebrow">Frame map</p><h2 id="motion-title">Observed motion</h2>
+          <ol class="motion-timeline">
+            <li><time>000—9000</time><span>Three progress paths advance and retreat independently.</span></li>
+            <li><time>EVERY FRAME</time><span>Counter, field, and frontier remain locked.</span></li>
+            <li><time>1500—2100</time><span>SVG frontiers breathe without changing their centers.</span></li>
+            <li><time>180—420</time><span>Direction changes use a soft deceleration and restart.</span></li>
+          </ol>
+          <p class="rail-note">Analysis source: 538 frames at 60fps, 1920 × 1080.</p>
+        </section>
+        <section class="rail-card" aria-labelledby="inspector-title">
+          <p class="rail-card__eyebrow">Inspector</p><h2 id="inspector-title">Live metrics</h2>
+          <dl class="metric-list">
+            <div><dt>Selector</dt><dd data-metric="selector">div.progress-pills</dd></div><div><dt>Size</dt><dd data-metric="size">—</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">grid</dd></div><div><dt>Padding</dt><dd data-metric="padding">—</dd></div><div><dt>Margin</dt><dd data-metric="margin">—</dd></div>
+          </dl>
+          <p class="rail-note">Inspect pauses all timelines so the field, SVG paths, copy, and numeric layer can be measured.</p>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

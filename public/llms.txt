@@ -8,6 +8,7 @@
 - Value Card Fan: overlapping cards that part around the active card.
 - Document Folder: a hover-driven archive that opens, raises its collection, and fans the rear document.
 - Glass Theme Switcher: a native light and dark switch with one moving glass lens and synchronized warm indicator.
+- Task Progress Pills: three independent animated values with colored fields and fluid SVG frontiers.
 
 ## Source
 

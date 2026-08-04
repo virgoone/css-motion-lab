@@ -42,6 +42,17 @@ export const effects = [
     href: "./effects/theme-switcher/",
     themes: ["Light", "Dark"],
     status: "Ready"
+  },
+  {
+    id: "005",
+    slug: "progress-pills",
+    title: "Task Progress Pills",
+    shortTitle: "Progress Pills",
+    category: "Data status",
+    description: "Three independent task values driven by colored fields and fluid SVG frontiers.",
+    href: "./effects/progress-pills/",
+    themes: ["Signal Trio"],
+    status: "Ready"
   }
 ];
 

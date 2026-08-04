@@ -1,0 +1,286 @@
+@property --pill-progress {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --pill-count {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 50;
+}
+
+.progress-pills,
+.progress-pills *,
+.progress-pills *::before,
+.progress-pills *::after {
+  box-sizing: border-box;
+}
+
+.progress-pills {
+  --progress-pill-width: clamp(22rem, 52vw, 35rem);
+  display: grid;
+  width: var(--progress-pill-width);
+  gap: calc(var(--progress-pill-width) * 0.065);
+}
+
+.progress-pill {
+  --pill-progress: 50%;
+  --pill-count: 50;
+  --pill-accent: #ffb544;
+  --pill-halo: #cf3c79;
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 3.9 / 1;
+  grid-template-columns: minmax(0, 1fr) 24%;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 4%);
+  border-radius: calc(var(--progress-pill-width) * 0.058);
+  background: #202022;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 4%),
+    inset 0 -1px 0 rgb(0 0 0 / 12%);
+  color: #f8f7f4;
+  counter-reset: progress-value var(--pill-count);
+  isolation: isolate;
+}
+
+.progress-pill--model {
+  --pill-progress: 64%;
+  --pill-count: 64;
+  --pill-accent: #ffbf45;
+  --pill-halo: #d63378;
+  animation: model-progress 12s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.progress-pill--agent {
+  --pill-progress: 41%;
+  --pill-count: 41;
+  --pill-accent: #35e9f1;
+  --pill-halo: #246ce8;
+  animation: agent-progress 12s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.progress-pill--visual {
+  --pill-progress: 73%;
+  --pill-count: 73;
+  --pill-accent: #72f68a;
+  --pill-halo: #862de0;
+  animation: visual-progress 12s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+
+.progress-pill__fill,
+.progress-pill__edge {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.progress-pill__fill {
+  background:
+    radial-gradient(circle at 91% 34%, color-mix(in srgb, var(--pill-accent) 34%, transparent), transparent 16%),
+    radial-gradient(circle at 92% 74%, color-mix(in srgb, var(--pill-halo) 42%, transparent), transparent 18%),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--pill-halo) 12%, #19171d) 0%,
+      color-mix(in srgb, var(--pill-halo) 16%, #19171d) 72%,
+      color-mix(in srgb, var(--pill-halo) 28%, #1c1720) 88%,
+      color-mix(in srgb, var(--pill-halo) 54%, #1c1720) 96%,
+      var(--pill-accent) 100%
+    );
+  transform: translate3d(calc(var(--pill-progress) - 102%), 0, 0);
+}
+
+.progress-pill__fill::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -1%;
+  width: 24%;
+  height: 140%;
+  background:
+    repeating-linear-gradient(
+      148deg,
+      transparent 0 8%,
+      rgb(255 255 255 / 10%) 9% 10%,
+      transparent 11% 19%
+    );
+  filter: blur(calc(var(--progress-pill-width) * 0.016));
+  opacity: 0.58;
+  transform: rotate(-7deg);
+}
+
+.progress-pill__edge {
+  color: var(--pill-accent);
+  transform: translate3d(calc(var(--pill-progress) - 10%), 0, 0);
+}
+
+.progress-pill__edge svg {
+  display: block;
+  width: 17%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 50% 50%;
+  animation: edge-breathe 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+}
+
+.progress-pill--agent .progress-pill__edge svg {
+  animation-duration: 2.1s;
+  animation-direction: alternate-reverse;
+}
+
+.progress-pill--visual .progress-pill__edge svg {
+  animation-duration: 1.55s;
+}
+
+.progress-pill__edge-fill {
+  fill: currentColor;
+  filter: blur(calc(var(--progress-pill-width) * 0.009));
+  opacity: 0.12;
+}
+
+.progress-pill__edge-glow,
+.progress-pill__edge-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.progress-pill__edge-glow {
+  stroke-width: calc(var(--progress-pill-width) * 0.023);
+  filter: blur(calc(var(--progress-pill-width) * 0.014));
+  opacity: 0.68;
+}
+
+.progress-pill__edge-line {
+  stroke-width: max(2px, calc(var(--progress-pill-width) * 0.006));
+  filter: drop-shadow(0 0 0.18rem color-mix(in srgb, var(--pill-accent) 72%, transparent));
+}
+
+.progress-pill__copy,
+.progress-pill__value {
+  position: relative;
+  z-index: 2;
+}
+
+.progress-pill__copy {
+  min-width: 0;
+  padding-left: 7.4%;
+}
+
+.progress-pill__copy strong,
+.progress-pill__copy span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-pill__copy strong {
+  font-size: clamp(0.7rem, 1.45vw, 1.04rem);
+  font-weight: 720;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.progress-pill__copy span {
+  margin-top: 0.34rem;
+  color: rgb(233 231 236 / 28%);
+  font-family: "SFMono-Regular", "Cascadia Code", "Roboto Mono", monospace;
+  font-size: clamp(0.38rem, 0.72vw, 0.54rem);
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+.progress-pill__value {
+  justify-self: end;
+  padding-right: 18%;
+  font-size: clamp(1.7rem, 4vw, 2.9rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 560;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+
+.progress-pill__value::after {
+  content: counter(progress-value) "%";
+}
+
+@keyframes model-progress {
+  0%, 100% { --pill-progress: 60%; --pill-count: 60; }
+  8% { --pill-progress: 64%; --pill-count: 64; }
+  16% { --pill-progress: 51%; --pill-count: 51; }
+  24% { --pill-progress: 45%; --pill-count: 45; }
+  32% { --pill-progress: 51%; --pill-count: 51; }
+  40% { --pill-progress: 63%; --pill-count: 63; }
+  50% { --pill-progress: 33%; --pill-count: 33; }
+  60% { --pill-progress: 37%; --pill-count: 37; }
+  70% { --pill-progress: 30%; --pill-count: 30; }
+  80% { --pill-progress: 35%; --pill-count: 35; }
+  90% { --pill-progress: 45%; --pill-count: 45; }
+}
+
+@keyframes agent-progress {
+  0%, 100% { --pill-progress: 34%; --pill-count: 34; }
+  8% { --pill-progress: 41%; --pill-count: 41; }
+  16% { --pill-progress: 45%; --pill-count: 45; }
+  24% { --pill-progress: 39%; --pill-count: 39; }
+  32% { --pill-progress: 51%; --pill-count: 51; }
+  40% { --pill-progress: 33%; --pill-count: 33; }
+  50% { --pill-progress: 53%; --pill-count: 53; }
+  60% { --pill-progress: 42%; --pill-count: 42; }
+  70% { --pill-progress: 54%; --pill-count: 54; }
+  80% { --pill-progress: 41%; --pill-count: 41; }
+  90% { --pill-progress: 39%; --pill-count: 39; }
+}
+
+@keyframes visual-progress {
+  0%, 100% { --pill-progress: 71%; --pill-count: 71; }
+  8% { --pill-progress: 73%; --pill-count: 73; }
+  16% { --pill-progress: 64%; --pill-count: 64; }
+  24% { --pill-progress: 57%; --pill-count: 57; }
+  32% { --pill-progress: 25%; --pill-count: 25; }
+  40% { --pill-progress: 30%; --pill-count: 30; }
+  50% { --pill-progress: 37%; --pill-count: 37; }
+  60% { --pill-progress: 23%; --pill-count: 23; }
+  70% { --pill-progress: 36%; --pill-count: 36; }
+  80% { --pill-progress: 46%; --pill-count: 46; }
+  90% { --pill-progress: 47%; --pill-count: 47; }
+}
+
+@keyframes edge-breathe {
+  from { transform: translate3d(0, -0.6%, 0) scaleY(0.985); }
+  to { transform: translate3d(0, 0.6%, 0) scaleY(1.018); }
+}
+
+@media (max-width: 620px) {
+  .progress-pills {
+    --progress-pill-width: min(82vw, 25rem);
+    gap: 1rem;
+  }
+
+  .progress-pill__copy strong {
+    font-size: clamp(0.62rem, 3vw, 0.82rem);
+  }
+
+  .progress-pill__copy span {
+    font-size: clamp(0.34rem, 1.6vw, 0.44rem);
+  }
+
+  .progress-pill__value {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-pill,
+  .progress-pill__edge svg {
+    animation-play-state: paused !important;
+  }
+}
