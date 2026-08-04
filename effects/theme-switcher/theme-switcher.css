@@ -6,7 +6,7 @@
 }
 
 .theme-switcher-demo {
-  --theme-switcher-width: clamp(19rem, 46vw, 31rem);
+  --theme-switcher-width: clamp(17rem, 40vw, 26rem);
   --theme-switcher-duration: 280ms;
   --theme-switcher-ease: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
@@ -250,7 +250,7 @@
 
 @media (max-width: 620px) {
   .theme-switcher-demo {
-    --theme-switcher-width: min(78vw, 22rem);
+    --theme-switcher-width: min(74vw, 20rem);
     min-height: 31rem;
   }
 }
