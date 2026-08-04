@@ -5,6 +5,7 @@ import { getEffect } from "../registry.js";
 import { setupEffectDocs } from "../shared/docs-shell.js";
 
 const effect = getEffect("liquid-lens");
+document.documentElement.dataset.effectReady = effect.slug;
 const sourceRoot = document.querySelector("[data-liquid-lens-interactive]").cloneNode(true);
 sourceRoot.removeAttribute("data-inspect-default");
 sourceRoot.querySelector(".liquid-lens")?.removeAttribute("style");
