@@ -53,6 +53,17 @@ export const effects = [
     href: "./effects/progress-pills/",
     themes: ["Signal Trio"],
     status: "Ready"
+  },
+  {
+    id: "006",
+    slug: "liquid-lens",
+    title: "Liquid Refraction Lens",
+    shortTitle: "Liquid Lens",
+    category: "Optical material",
+    description: "A draggable glass capsule that refracts its backdrop through a two-axis SVG displacement map.",
+    href: "./effects/liquid-lens/",
+    themes: ["Warm Field"],
+    status: "Ready"
   }
 ];
 

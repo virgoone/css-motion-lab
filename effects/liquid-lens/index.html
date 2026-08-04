@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <meta
+      name="description"
+      content="Preview, inspect, and copy a draggable liquid glass refraction lens built with CSS and SVG."
+    />
+    <title>Liquid Refraction Lens — CSS Motion Lab</title>
+    <link rel="stylesheet" href="../shared/docs-shell.css" />
+    <link rel="stylesheet" href="./page.css" />
+    <link rel="stylesheet" href="./liquid-lens.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#effect-content">Skip to effect</a>
+
+    <div class="docs-shell">
+      <aside class="docs-nav" aria-label="Effect documentation">
+        <a class="docs-brand" href="../../" aria-label="CSS Motion Lab home">
+          <span class="docs-brand__mark" aria-hidden="true"></span><span>CSS Motion Lab</span>
+        </a>
+        <a class="docs-nav__back" href="../../">
+          <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M15 9H3m5-5L3 9l5 5" /></svg><span>All effects</span>
+        </a>
+
+        <p class="docs-nav__section">Components · 06</p>
+        <a class="docs-nav__link" href="../folder/"><span>Folder Pocket</span><span>001</span></a>
+        <a class="docs-nav__link" href="../value-cards/"><span>Value Card Fan</span><span>002</span></a>
+        <a class="docs-nav__link" href="../document-folder/"><span>Document Folder</span><span>003</span></a>
+        <a class="docs-nav__link" href="../theme-switcher/"><span>Theme Switcher</span><span>004</span></a>
+        <a class="docs-nav__link" href="../progress-pills/"><span>Progress Pills</span><span>005</span></a>
+        <a class="docs-nav__link is-active" href="./" aria-current="page"><span>Liquid Lens</span><span>006</span></a>
+        <div class="docs-nav__future">
+          A draggable capsule bends the scene with an SVG displacement map, then resolves its rim with layered CSS highlights.
+        </div>
+
+        <div class="docs-nav__footer">
+          <span>CSS + SVG</span>
+          <a href="https://github.com/virgoone/css-motion-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </aside>
+
+      <main class="docs-main" id="effect-content">
+        <header class="effect-intro">
+          <p class="breadcrumb"><span>Effects /</span> Optical material</p>
+          <h1>Liquid Refraction Lens</h1>
+          <div class="effect-intro__row">
+            <p class="effect-intro__description">
+              A movable glass capsule refracts the typography, tracks, and geometry beneath it.
+              The pixel displacement, specular rim, and physical drag remain separate layers.
+            </p>
+            <div class="effect-meta" aria-label="Effect metadata">
+              <span>CSS + SVG + ESM</span><span>0 dependencies</span><span>Chromium refraction</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="effect-workspace" aria-label="Liquid Refraction Lens explorer">
+          <div class="workspace-bar">
+            <div class="view-tabs" role="tablist" aria-label="Effect view">
+              <button class="view-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-preview" data-view="preview">Preview</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-code" data-view="code">Code</button>
+              <button class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-docs" data-view="docs">Docs</button>
+            </div>
+            <button class="inspect-toggle" type="button" aria-pressed="false" data-inspect-toggle data-inspect-only>
+              <span>Inspect</span><span class="inspect-toggle__switch" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="preview-panel" id="panel-preview" role="tabpanel" data-panel="preview">
+            <div class="preview-frame liquid-lens-preview-frame" data-inspect-frame>
+              <div class="preview-canvas" data-inspect-scope>
+                <div class="liquid-lens-demo" data-liquid-lens-interactive data-inspect-default>
+                  <svg class="liquid-lens__filter" aria-hidden="true">
+                    <defs>
+                      <filter id="liquid-lens-refraction" x="-12%" y="-28%" width="124%" height="156%" color-interpolation-filters="sRGB">
+                        <feImage
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='200' viewBox='0 0 512 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23008080'/%3E%3Cstop offset='.14' stop-color='%23808080'/%3E%3Cstop offset='.86' stop-color='%23808080'/%3E%3Cstop offset='1' stop-color='%23ff8080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='200' rx='100' fill='url(%23g)'/%3E%3C/svg%3E"
+                          result="map-x"
+                        />
+                        <feImage
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='200' viewBox='0 0 512 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23800080'/%3E%3Cstop offset='.22' stop-color='%23808080'/%3E%3Cstop offset='.78' stop-color='%23808080'/%3E%3Cstop offset='1' stop-color='%2380ff80'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='200' rx='100' fill='url(%23g)'/%3E%3C/svg%3E"
+                          result="map-y"
+                        />
+                        <feComposite in="map-x" in2="map-y" operator="arithmetic" k2="1" k3="1" k4="-0.5" result="bezel-map" />
+                        <feGaussianBlur in="bezel-map" stdDeviation="0.7" result="soft-map" />
+                        <feDisplacementMap in="SourceGraphic" in2="soft-map" scale="34" xChannelSelector="R" yChannelSelector="G" result="refracted" />
+                        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.045" numOctaves="1" seed="8" result="micro-map" />
+                        <feDisplacementMap in="refracted" in2="micro-map" scale="2.4" xChannelSelector="R" yChannelSelector="G" />
+                      </filter>
+                    </defs>
+                  </svg>
+
+                  <div class="liquid-lens__scene">
+                    <p class="liquid-lens__kicker">Optical systems / field study</p>
+                    <p class="liquid-lens__index">LG—006 / 1.50</p>
+                    <p class="liquid-lens__title">LIQUID <span>FIELD</span></p>
+                    <span class="liquid-lens__orbit" aria-hidden="true"></span>
+                    <p class="liquid-lens__meta"><strong>Refraction</strong><span>Two-axis bezel</span><strong>Input</strong><span>Pointer + keys</span></p>
+
+                    <button class="liquid-lens" type="button" aria-label="Move the liquid glass lens">
+                      <span class="liquid-lens__glass" aria-hidden="true"></span>
+                      <span class="liquid-lens__handle" aria-hidden="true"><span class="liquid-lens__grip"></span><span>Drag to refract</span></span>
+                    </button>
+                    <span class="liquid-lens__support" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="inspect-overlay" data-inspect-overlay hidden aria-hidden="true">
+                <div class="inspect-ruler inspect-ruler--x" data-ruler-x></div><div class="inspect-ruler inspect-ruler--y" data-ruler-y></div>
+                <div class="inspect-box" data-inspect-box></div>
+                <div class="inspect-tooltip" data-inspect-tooltip><strong>div.liquid-lens-demo</strong><span>block · live size</span></div>
+              </div>
+            </div>
+            <footer class="preview-footer">
+              <span><strong>Live</strong> · Drag across type, tracks, and the lower orbit</span>
+              <span>Pointer / arrow keys / Home · Chromium refraction</span>
+            </footer>
+          </div>
+
+          <div class="code-panel" id="panel-code" role="tabpanel" data-panel="code" hidden>
+            <div class="code-toolbar">
+              <div class="snippet-tabs" role="tablist" aria-label="Code format">
+                <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-snippet="html">HTML</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="css">CSS</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="js">JavaScript</button>
+                <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-snippet="full">Full page</button>
+              </div>
+              <button class="copy-action" type="button" data-copy-code>
+                <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="9" rx="2" /><path d="M5 13H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" /></svg><span data-copy-label>Copy code</span>
+              </button>
+            </div>
+            <pre class="code-window"><code data-code-output>Loading source…</code></pre>
+            <div class="code-toolbar code-toolbar--footer"><p class="code-status" data-copy-status aria-live="polite">HTML · ready to copy</p></div>
+          </div>
+
+          <article class="docs-panel" id="panel-docs" role="tabpanel" data-panel="docs" hidden>
+            <p class="docs-panel__lead">
+              This study follows the optical stack described by kube.io: generate a displacement field, apply it to the backdrop, then draw the specular material independently. The implementation uses a prebuilt map so movement only updates one transform.
+            </p>
+            <section class="docs-section" aria-labelledby="install-title">
+              <p class="eyebrow">01 / Setup</p><h2 id="install-title">Installation</h2>
+              <p>Copy the component HTML, CSS, and controller. The hidden SVG filter must remain in the same document as the lens.</p>
+              <div class="install-block"><code>&lt;link rel="stylesheet" href="/liquid-lens.css" /&gt;</code><button class="inline-copy" type="button" data-copy-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;/liquid-lens.css&quot; /&gt;" data-copy-label="Copy import">Copy import</button></div>
+            </section>
+            <section class="docs-section" aria-labelledby="anatomy-title">
+              <p class="eyebrow">02 / Anatomy</p><h2 id="anatomy-title">Three independent optical layers</h2>
+              <ol class="usage-steps">
+                <li>The hidden SVG builds horizontal and vertical bezel maps, then combines their red and green channels.</li>
+                <li><code>backdrop-filter: url(#liquid-lens-refraction)</code> bends only the pixels behind the capsule.</li>
+                <li>CSS borders, inner shadows, and specular gradients draw the physical rim after refraction.</li>
+              </ol>
+            </section>
+            <section class="docs-section" aria-labelledby="frames-title">
+              <p class="eyebrow">03 / Optical pipeline</p><h2 id="frames-title">From bezel map to material</h2>
+              <div class="frame-grid">
+                <div><span>01 / MAP X</span><strong>Horizontal field</strong><p>The red channel pushes the left and right bezel in opposite directions.</p></div>
+                <div><span>02 / MAP Y</span><strong>Vertical field</strong><p>The green channel encodes the top and bottom surface slope.</p></div>
+                <div><span>03 / DISPLACE</span><strong>Refraction</strong><p>The combined field bends high-contrast pixels with a 34px scale.</p></div>
+                <div><span>04 / SPECULAR</span><strong>Resolve</strong><p>Inner borders and directional highlights make the capsule read as glass.</p></div>
+              </div>
+            </section>
+            <section class="docs-section" aria-labelledby="api-title">
+              <p class="eyebrow">04 / Contract</p><h2 id="api-title">CSS API</h2>
+              <table class="api-table"><thead><tr><th>Token / selector</th><th>Default</th><th>Purpose</th></tr></thead><tbody>
+                <tr><td><code>--liquid-lens-width</code></td><td><code>27rem—46rem</code></td><td>Scales the complete optical scene and lens.</td></tr>
+                <tr><td><code>--liquid-lens-accent</code></td><td><code>#c86e3b</code></td><td>Scene geometry and lower specular warmth.</td></tr>
+                <tr><td><code>scale</code></td><td><code>34</code></td><td>Strength of the SVG displacement map.</td></tr>
+                <tr><td><code>--lens-x / --lens-y</code></td><td><code>px</code></td><td>Transform-only pointer position written by the controller.</td></tr>
+              </tbody></table>
+            </section>
+            <section class="docs-section" aria-labelledby="support-title">
+              <p class="eyebrow">05 / Support</p><h2 id="support-title">Browser behavior</h2>
+              <p>Chromium currently renders SVG filters as backdrop filters. Other browsers receive the same capsule, drag behavior, highlights, and a softer blur fallback without pixel displacement.</p>
+            </section>
+          </article>
+        </section>
+      </main>
+
+      <aside class="properties-rail" aria-label="Effect properties">
+        <section class="rail-card" aria-labelledby="motion-title">
+          <p class="rail-card__eyebrow">Optical stack</p><h2 id="motion-title">Observed pipeline</h2>
+          <ol class="motion-timeline">
+            <li><time>MAP X</time><span>Red-channel edge vectors encode horizontal refraction.</span></li>
+            <li><time>MAP Y</time><span>Green-channel edge vectors encode vertical refraction.</span></li>
+            <li><time>34 PX</time><span>SVG displacement bends the backdrop inside the capsule.</span></li>
+            <li><time>RIM</time><span>CSS specular layers resolve edge depth and reflection.</span></li>
+          </ol>
+          <p class="rail-note">Technique study based on kube.io's refraction article; this implementation uses an original static two-axis bezel map.</p>
+        </section>
+        <section class="rail-card" aria-labelledby="inspector-title">
+          <p class="rail-card__eyebrow">Inspector</p><h2 id="inspector-title">Live metrics</h2>
+          <dl class="metric-list">
+            <div><dt>Selector</dt><dd data-metric="selector">div.liquid-lens-demo</dd></div><div><dt>Size</dt><dd data-metric="size">—</dd></div>
+            <div><dt>Display</dt><dd data-metric="display">block</dd></div><div><dt>Padding</dt><dd data-metric="padding">—</dd></div><div><dt>Margin</dt><dd data-metric="margin">—</dd></div>
+          </dl>
+          <p class="rail-note">Enable Inspect to freeze interaction and measure the stage, capsule, glass, or typography.</p>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

@@ -9,6 +9,7 @@ A small, dependency-free collection of tactile CSS motion studies. Each effect i
 - **Document Folder** — a three-stage archive that opens, lifts a two-piece postage collection, and fans the rear document.
 - **Glass Theme Switcher** — a native light and dark switch with a moving glass lens, warm light pool, and synchronized indicator.
 - **Task Progress Pills** — three animated task values with transform-driven colored fields, CSS counters, and fluid SVG frontiers.
+- **Liquid Refraction Lens** — a draggable glass capsule with a two-axis SVG displacement map and a non-Chromium blur fallback.
 
 ## Development
 
@@ -76,14 +77,20 @@ Node.js is pinned to `22.16.0` through `.node-version`. The project uses relativ
     │   ├── page.css
     │   ├── theme-switcher.css
     │   └── app.js
-    └── progress-pills/
+    ├── progress-pills/
+    │   ├── index.html
+    │   ├── page.css
+    │   ├── progress-pills.css
+    │   └── app.js
+    └── liquid-lens/
         ├── index.html
         ├── page.css
-        ├── progress-pills.css
+        ├── liquid-lens.css
+        ├── liquid-lens.js
         └── app.js
 ```
 
-Each component stylesheet lives beside its effect page. Shared documentation behavior lives in `effects/shared/`: Preview / Code / Docs tabs, clipboard access, pixel rulers, and live element measurements. All five interactions remain pure CSS.
+Each component stylesheet lives beside its effect page. Shared documentation behavior lives in `effects/shared/`: Preview / Code / Docs tabs, clipboard access, pixel rulers, and live element measurements. The first five interactions are pure CSS; Liquid Refraction Lens adds a small ESM pointer controller while CSS and SVG own the optical rendering.
 
 ## Adding an effect
 
@@ -99,5 +106,6 @@ Each component stylesheet lives beside its effect page. Shared documentation beh
 - Document-folder interaction study inspired by [Aditya Sur / Inspora](https://x.com/insporadesign/status/2083951579808301435).
 - Theme-switcher interaction study inspired by [Mikolaj Staromlynski / Inspora](https://x.com/insporadesign/status/2083109498147709192).
 - Task-progress interaction study inspired by [Silver / Inspora](https://x.com/insporadesign/status/2082889109446557913).
+- Liquid refraction technique informed by [Liquid Glass in the Browser: Refraction with CSS and SVG](https://kube.io/blog/liquid-glass-css-svg/).
 - Source-panel interaction informed by [LDRS / UI Ball](https://uiball.com/ldrs/).
 - Documentation and inspector information architecture informed by [Fluid Functionalism](https://www.fluidfunctionalism.com/docs/table), which is available under the MIT license.

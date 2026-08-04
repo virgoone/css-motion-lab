@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./effects/document-folder/document-folder.css" />
     <link rel="stylesheet" href="./effects/theme-switcher/theme-switcher.css" />
     <link rel="stylesheet" href="./effects/progress-pills/progress-pills.css" />
+    <link rel="stylesheet" href="./effects/liquid-lens/liquid-lens.css" />
     <script type="module" src="./assets/index.js"></script>
   </head>
   <body>
@@ -44,13 +45,13 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <p class="eyebrow">Pure CSS / Motion studies 001—005</p>
+          <p class="eyebrow">CSS + SVG / Motion studies 001—006</p>
           <h1 id="hero-title">Small motion,<br />copied cleanly.</h1>
           <p class="hero__description">
             A growing index of tactile interface effects. Every study includes a live preview and
             copy-ready HTML and CSS.
           </p>
-          <a class="primary-link" href="./effects/progress-pills/">
+          <a class="primary-link" href="./effects/liquid-lens/">
             Open the latest study
             <svg viewBox="0 0 18 18" aria-hidden="true">
               <path d="m6 3 6 6-6 6" />
@@ -70,7 +71,7 @@
             <p class="eyebrow">The index</p>
             <h2 id="effects-title">Effects</h2>
           </div>
-          <p data-effect-count>5 studies available</p>
+          <p data-effect-count>6 studies available</p>
         </header>
 
         <a class="effect-card" href="./effects/folder/" aria-label="Open Folder Pocket effect">
@@ -314,8 +315,47 @@
           </div>
         </a>
 
+        <a class="effect-card effect-card--liquid" href="./effects/liquid-lens/" aria-label="Open Liquid Refraction Lens effect">
+          <div class="effect-card__preview">
+            <span class="effect-card__number">006</span>
+            <span class="liquid-lens-demo" aria-hidden="true">
+              <svg class="liquid-lens__filter">
+                <defs>
+                  <filter id="liquid-lens-refraction" x="-12%" y="-28%" width="124%" height="156%" color-interpolation-filters="sRGB">
+                    <feImage width="100%" height="100%" preserveAspectRatio="none" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='200' viewBox='0 0 512 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23008080'/%3E%3Cstop offset='.14' stop-color='%23808080'/%3E%3Cstop offset='.86' stop-color='%23808080'/%3E%3Cstop offset='1' stop-color='%23ff8080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='200' rx='100' fill='url(%23g)'/%3E%3C/svg%3E" result="map-x" />
+                    <feImage width="100%" height="100%" preserveAspectRatio="none" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='200' viewBox='0 0 512 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23800080'/%3E%3Cstop offset='.22' stop-color='%23808080'/%3E%3Cstop offset='.78' stop-color='%23808080'/%3E%3Cstop offset='1' stop-color='%2380ff80'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='200' rx='100' fill='url(%23g)'/%3E%3C/svg%3E" result="map-y" />
+                    <feComposite in="map-x" in2="map-y" operator="arithmetic" k2="1" k3="1" k4="-0.5" result="bezel-map" />
+                    <feGaussianBlur in="bezel-map" stdDeviation="0.7" result="soft-map" />
+                    <feDisplacementMap in="SourceGraphic" in2="soft-map" scale="34" xChannelSelector="R" yChannelSelector="G" result="refracted" />
+                    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.045" numOctaves="1" seed="8" result="micro-map" />
+                    <feDisplacementMap in="refracted" in2="micro-map" scale="2.4" xChannelSelector="R" yChannelSelector="G" />
+                  </filter>
+                </defs>
+              </svg>
+              <span class="liquid-lens__scene">
+                <span class="liquid-lens__kicker">Optical systems / field study</span>
+                <span class="liquid-lens__index">LG—006 / 1.50</span>
+                <span class="liquid-lens__title">LIQUID <span>FIELD</span></span>
+                <span class="liquid-lens__orbit"></span>
+                <span class="liquid-lens__meta"><strong>Refraction</strong><span>Two-axis bezel</span><strong>Input</strong><span>Pointer + keys</span></span>
+                <span class="liquid-lens">
+                  <span class="liquid-lens__glass"></span>
+                  <span class="liquid-lens__handle"><span class="liquid-lens__grip"></span><span>Move to refract</span></span>
+                </span>
+                <span class="liquid-lens__support"></span>
+              </span>
+            </span>
+            <span class="effect-card__hint">Hover to sweep the lens</span>
+          </div>
+
+          <div class="effect-card__caption">
+            <div><p>Liquid Refraction Lens</p><span>A two-axis SVG field bends whatever sits beneath the glass.</span></div>
+            <span class="effect-card__arrow" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10h12m-5-5 5 5-5 5" /></svg></span>
+          </div>
+        </a>
+
         <div class="coming-next" aria-label="Future effect slots">
-          <span>006</span>
+          <span>007</span>
           <p>Reserved for the next motion studies.</p>
           <span>In progress</span>
         </div>

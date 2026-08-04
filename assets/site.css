@@ -381,6 +381,28 @@ svg {
   color: rgb(32 33 31 / 47%);
 }
 
+.effect-card--liquid .effect-card__preview {
+  background:
+    radial-gradient(circle at 50% 44%, rgb(217 209 193 / 18%), transparent 34rem),
+    #171815;
+}
+
+.effect-card--liquid .liquid-lens-demo {
+  --liquid-lens-width: clamp(28rem, 68vw, 52rem);
+  flex: 0 0 auto;
+}
+
+.effect-card--liquid .liquid-lens {
+  --lens-x: -5rem;
+  --lens-y: 1.2rem;
+}
+
+.effect-card--liquid:hover .liquid-lens,
+.effect-card--liquid:focus-visible .liquid-lens {
+  --lens-x: 6rem;
+  --lens-y: -0.8rem;
+}
+
 .effect-card__number,
 .effect-card__hint {
   position: absolute;
@@ -533,6 +555,19 @@ svg {
 
   .effect-card--progress .progress-pills {
     --progress-pill-width: min(78vw, 23rem);
+  }
+
+  .effect-card--liquid .liquid-lens-demo {
+    --liquid-lens-width: min(86vw, 31rem);
+  }
+
+  .effect-card--liquid .liquid-lens {
+    --lens-x: -2rem;
+  }
+
+  .effect-card--liquid:hover .liquid-lens,
+  .effect-card--liquid:focus-visible .liquid-lens {
+    --lens-x: 2.5rem;
   }
 
   .effect-card__number {
